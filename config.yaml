@@ -19,3 +19,7 @@ disableKinds:
   - RSS
   - taxonomy
   - taxonomyTerm
+outputs:
+  home:
+    - html
+    - json

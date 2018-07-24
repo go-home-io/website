@@ -4,30 +4,47 @@
         <a href="/">{{ .Site.Title }}</a>
       </div><a data-component="toggleme" data-target="#top" href="#" id="nav-toggle"><i class="kube-menu"></i></a>
     </div>
+</div>
+
+<div class="hide-sm" id="top">
+  <div id="top-brand">
+    <a href="/" title="home" class="active">{{ .Site.Title }}</a>
   </div>
-  <div class="hide-sm" id="top">
-    <div id="top-brand">
-      <a href="/" title="home">{{ .Site.Title }}</a>
-    </div>
-    <nav id="top-nav-main">
-      <ul>
-       {{ $currentPage := . }}
-       {{ range .Site.Menus.main }}
+  <nav id="top-nav-main">
+    <ul>
+     {{ $currentPage := . }}
+     {{ range .Site.Menus.main }}
     <li><a href="{{ .URL }}" {{if  $currentPage.IsMenuCurrent "main" . }} class="active"{{end}}>{{ .Name }}</a></li>
     {{end}}
-      </ul>
-    </nav>
-    <nav id="top-nav-extra"> 
-      <ul>
-        {{ range .Site.Menus.extra }} 
-          <li>
-            <a href="{{ .Permalink }}">{{ .Name }}</a>
-          </li>
-        {{ end }}  
-      </ul>
-    </nav>
+    </ul>
+  </nav>
+  <nav id="top-nav-extra"> 
+    <ul>
+      {{ range .Site.Menus.extra }} 
+        <li>
+          <a href="{{ .Permalink }}">{{ .Name }}</a>
+        </li>
+      {{ end }}  
+    </ul>
+  </nav>
 
-    <div>
-      <a href="http://github.com/go-home-io/server" target="_blank"><img src="/img/GitHub-Mark.png"style="width:32px;height:32px;"></a>
-    </div>
-  </div>
+  <nav class="is-push-right">
+      <ul>
+
+        <li><form class="search" onSubmit="return doSearch();"><input id="searchField" type="search" placeholder="Search..."></form></li>
+        <li><a href="http://github.com/go-home-io/server" target="_blank"><img src="/img/GitHub-Mark.png"style="width:32px;height:32px;"></a></li>
+      </ul>
+   
+  </nav>
+</div>
+
+<script>
+  function doSearch(){
+      var query = document.getElementById("searchField").value;
+      if (query == "")
+          return;
+      else
+          location = "/search?s=" + query;
+      return false;
+  }
+</script>
