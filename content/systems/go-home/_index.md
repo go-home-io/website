@@ -1,7 +1,7 @@
 ---
 title: 
 description:
-date: {{ .Date }}
+date: 2018-07-23T20:04:03-07:00
 draf: false
 bref: 
 toc: true

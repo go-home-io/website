@@ -4,9 +4,9 @@
       title: tile of the -->
 <div id="sidebar">
   {{ if eq .link "true" }}
-    <h5><a href="{{ .page.Parent.Permalink }}">{{ .title }}</a> content:{{ .ref }}:</h5>
+    <h5><a href="{{ .page.Parent.Permalink }}">{{ .title }}</a>:</h5>
   {{ else }}
-    <h4>{{ .title}} content:</h4>
+    <h5>{{ .title}}:</h5>
   {{ end }}
   <nav id="contents">
     <ol>

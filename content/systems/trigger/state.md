@@ -16,22 +16,22 @@ State trigger watches devices updates and reacts if actual state matches state d
 
 | Param | Validation | Default | Description |
 |-------|-----------|----------|-------------|
-| logic | one of `or`, `and` | `or` | Defines whether trigger should react on any or all state match. |
-| delay | seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger won't react. |
-| pessimistic | bool | `false` | If set to `true`, trigger will react even upon first device load. |
-| devices | required | | List of devices to watch. |
+| **logic** | one of `or`, `and` | `or` | Defines whether trigger should react on any or all state match. |
+| **delay** | seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger won't react. |
+| **pessimistic** | bool | `false` | If set to `true`, trigger will react even upon first device load. |
+| **devices** | required | | List of devices to watch. |
 
 ### Device definition
 
 | Param | Validation | Default | Description |
 |-------|-----------|----------|-------------|
-| device | required || Glob-based device ID to watch. |
-| property | required || Property name to watch. |
-| state | required || Property desired state. |
+| **device** | required || Glob-based device ID to watch. |
+| **property** | required || Property name to watch. |
+| **state** | required || Property desired state. |
 
 ### Example 
 
-The following examples shows two triggers reacting on movement sensor and turning on lights at 80% brightness for 60 seconds. 
+The following examples shows two triggers reacting on motion sensor and turning on lights at 80% brightness for 60 seconds. 
 
 ```yaml
 system: trigger

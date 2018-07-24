@@ -2,8 +2,6 @@ baseURL: http://example.org/
 languageCode: en-us
 title: go-home
 enableGitInfo: true
-taxonomies: 
-  tag: tags
 menu: 
   main: 
     - identifier: docs
@@ -17,3 +15,7 @@ pygmentsCodefences: true
 pygmentsCodefencesGuessSyntax: true
 blackfriday:
   hrefTargetBlank: true
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm

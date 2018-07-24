@@ -17,9 +17,9 @@ Trigger system is responsible for reacting on state-changes events. As an outpur
 
 | Param | Validation | Default | Description |
 |-------|-----------|----------|-------------|
-| name | required || Name of the trigger. Will be used as prefix for entity ID. |
-| activeHrs||| If specified, this time range will be used for limiting trigger actions. Format is ["Kitchen"](https://golang.org/pkg/time/#pkg-constants). For example `12:00PM-03:00PM` will make trigger to react for 3 hrs after noon only.|
-| actions | at least one || List of trigger actions.|
+| **name** | required || Name of the trigger. Will be used as prefix for entity ID. |
+| **activeHrs** ||| If specified, this time range will be used for limiting trigger actions. Format is ["Kitchen"](https://golang.org/pkg/time/#pkg-constants). For example `12:00PM-03:00PM` will make trigger to react for 3 hrs after noon only.|
+| **actions** | at least one || List of trigger actions.|
 
 ### Trigger action
 
@@ -27,11 +27,11 @@ Describes which actions should be taken if trigger is in `triggered` state. Acti
 
 | Param | Validation | Default | Description |
 |-------|-----------|----------|-------------|
-| system | required || Describes which system this action belongs to. |
-| entity | required || [Glob]({{< relref "/docs/config/glob.md" >}})-based entity ID which should be called. |
-| command | required || Comamnd which should be called. |
-| args ||| List of arguments to pass to `command`.|
+| **system** | required || Describes which system this action belongs to. |
+| **entity** | required || [Glob]({{<relref "/docs/config/glob.md">}})-based entity ID which should be called. |
+| **command** | required || Comamnd which should be called. |
+| **args** ||| List of arguments to pass to `command`.|
 
-### Supported action systems
+#### Action systems
 
 - `device` -- invokes device command

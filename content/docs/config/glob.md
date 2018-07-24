@@ -9,4 +9,22 @@ toc: true
 type: doc
 ---
 
-GLOB
+[Glob](https://en.wikipedia.org/wiki/Glob_(programming)) is a matching pattern, used in most OSes. In go-home glob matching is powered by [globwas/glob](https://github.com/gobwas/glob) library.
+
+Most systems support wildcarding entities using glob patters. 
+
+### Syntax
+|Wildcard|Description|
+|--------|-----------|
+| `*` | Matches any number of any characters including none |
+| `?` | Matches any single character |
+| `[abc]` | Matches one character given in the bracket |
+| `[a-z]` | Matches one character from the range given in the bracket |
+| `[!abc]` | Matches one character that is not given in the bracket |
+| `[!a-z]` | Matches one character that is not from the range given in the bracket |
+
+### Examples
+
+- `hue.light.*` will select all light entities exposed by HUE hub. If both groups and lights are exposed, all of them will be selected. 
+- `hue.light.[!g]*` will select only lights, as groups will be filtered by `[!g]` exclusion.
+
