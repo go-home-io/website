@@ -1,0 +1,19 @@
+@import "./kube/kube.scss";
+
+#container {
+    @include grid-row;
+}
+#sidebar {
+    @include flex-item-width(300px);
+}
+#content {
+    @include flex-item-auto;
+}
+
+.visited {
+	color: gray !important;
+}
+
+.language-yaml {
+	background-color: transparent !important;
+}

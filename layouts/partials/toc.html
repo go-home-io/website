@@ -1,0 +1,18 @@
+{{ if and (isset .Params "toc") .Params.toc }}
+<nav id="contents">
+    <ol class="js-toc">
+    </ol>
+</nav>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",
+function(){
+tocbot.init({
+tocSelector: '.js-toc',
+contentSelector: '.content',
+headingSelector: 'h3'
+})
+}
+);
+</script>
+
+{{ end }}

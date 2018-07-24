@@ -1,0 +1,33 @@
+<!--  page: page object
+      from: where too look for sub-pages 
+      link: should create link to parent or not 
+      title: tile of the -->
+<div id="sidebar">
+  {{ if eq .link "true" }}
+    <h5><a href="{{ .page.Parent.Permalink }}">{{ .title }}</a> content:{{ .ref }}:</h5>
+  {{ else }}
+    <h4>{{ .title}} content:</h4>
+  {{ end }}
+  <nav id="contents">
+    <ol>
+      <ul>
+        {{ $pageType := .page.Page.Type }}
+        {{ $cur := .page.Permalink }}	
+        {{ $link := .link }}
+        {{ range sort (where .from "Type" $pageType) "Title" "asc" }}
+          <li class="toc-list-item">
+          	{{ if and (eq .Permalink $cur)  (eq $link "true") }}
+          		<a href="{{ .Permalink }}" class="visited">{{ .Title }}</a>
+          	{{ else }}
+            		<a href="{{ .Permalink }}" class="toc-link">{{ .Title }}</a>
+          	{{ end }}
+          </li>
+        {{ end }}    
+      </ul>
+    </ol>
+  </nav> 
+
+  <h6>What's on this Page:</h6>
+  {{ partial "toc" .page }}
+
+</div>

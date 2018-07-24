@@ -1,0 +1,23 @@
+<div id="container">
+  <div id="content">
+    <div id="main">
+      <div id="hero">
+        <h1> {{ .page.Title}}</h1>
+        <p class="hero-lead">
+             {{ .page.Params.bref  }}.
+        </p>
+
+      </div> 
+      <div id="kube-component" class="content">
+        {{ .page.Content}}
+        {{ if .Params.script }}
+          {{ $script := (delimit (slice "scripts" .page.Params.script) "/" )}}
+        {{ partial (string $script) .page }}
+        {{ end }}
+      </div>
+      </div>
+  </div>
+
+  {{ partial "subsections" (dict "page" .page "from" .page.Pages "link" "false" "title" .page.Title) }}
+  
+</div>

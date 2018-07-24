@@ -1,0 +1,19 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: go-home
+enableGitInfo: true
+taxonomies: 
+  tag: tags
+menu: 
+  main: 
+    - identifier: docs
+      name: Docs
+      url: /docs/
+    - identifier: systems
+      name: Systems
+      url: /systems/
+pygmentsStyle: dracula
+pygmentsCodefences: true
+pygmentsCodefencesGuessSyntax: true
+blackfriday:
+  hrefTargetBlank: true
