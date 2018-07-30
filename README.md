@@ -4,7 +4,7 @@ This repo contains `go-home` [webite](https://go-home.io).
 
 Website is staticly generated, using [Hugo](http://gohugo.io) and based on the awesome [Kube](http://kube.elemnts.org) theme.
 
-To install Hugo, refer to original [documentation](http://gohugo.io/getting-started/installing/).
+To install Hugo, refer to official [documentation](http://gohugo.io/getting-started/installing/).
 
 ### Creating a new entry
 

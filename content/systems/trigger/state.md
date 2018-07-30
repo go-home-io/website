@@ -6,32 +6,33 @@ draf: false
 bref: State trigger watches devices state
 toc: true
 type: system
+system: trigger
+provider: state
 ---
-
-### Quick overview
+{{<provider>}}
 
 State trigger watches devices updates and reacts if actual state matches state defined in the config.  
 
 ### Configuration options
 
 | Param | Validation | Default | Description |
-|-------|-----------|----------|-------------|
+|-------|------------|---------|-------------|
 | **logic** | one of `or`, `and` | `or` | Defines whether trigger should react on any or all state match. |
-| **delay** | seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger won't react. |
-| **pessimistic** | bool | `false` | If set to `true`, trigger will react even upon first device load. |
+| **delay** | seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger doesn't react. |
+| **pessimistic** | bool | `false` | If set to `true`, trigger reacts even upon first device load. |
 | **devices** | required | | List of devices to watch. |
 
 ### Device definition
 
 | Param | Validation | Default | Description |
-|-------|-----------|----------|-------------|
-| **device** | required || Glob-based device ID to watch. |
+|-------|------------|---------|-------------|
+| **device** | required || [Glob]({{<relref "/docs/config/glob.md">}})-based device ID to watch. |
 | **property** | required || Property name to watch. |
 | **state** | required || Property desired state. |
 
 ### Example 
 
-The following examples shows two triggers reacting on motion sensor and turning on lights at 80% brightness for 60 seconds. 
+The following example demonstrates two triggers reacting on motion sensor and turning on lights at 80% brightness for 60 seconds:
 
 ```yaml
 system: trigger

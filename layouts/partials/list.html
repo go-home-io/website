@@ -2,7 +2,7 @@
   <div id="content">
     <div id="main">
       <div id="hero">
-        <h1> {{ .page.Title}}</h1>
+        <h2> {{ .page.Title}}</h2>
         <p class="hero-lead">
              {{ .page.Params.bref  }}.
         </p>
@@ -18,6 +18,6 @@
       </div>
   </div>
 
-  {{ partial "subsections" (dict "page" .page "from" .page.Pages "link" "false" "title" .page.Title) }}
+  {{ partial "subsections" (dict "page" .page "from" .page.Pages "link" "false" "title" .page.Title "sort_by" .sort_by ) }}
   
 </div>

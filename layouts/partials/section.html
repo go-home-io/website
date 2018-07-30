@@ -1,0 +1,37 @@
+<!--page -- current page
+    sort_by -- field to sort
+    -->
+
+<div id="main">
+    <div id="hero">
+        <h2>go-home {{ .page.CurrentSection.Type }}</h2>
+    </div>
+    <div id="components">
+        <div class="row gutters">
+
+        {{ $sortBy := .sort_by | default "Title" }}
+        {{ $curPL := .page.Permalink }}
+        {{ range sort .page.Sections $sortBy "asc" }}
+            {{ if eq .Parent.Permalink $curPL }}
+                {{ $logo := .Params.logo }}
+                {{ $link := .Permalink}}
+                {{ $title := .Title}}
+                <div class="col col-3 item">
+                    {{ if ne $logo nil }}
+                        {{ range .Resources.ByType "image" }}
+                            {{ if eq .Name $logo }}
+                                {{ $resized := .Resize "32x" }}
+                                <h4><a href="{{ $link }}"><img src="{{ $resized.RelPermalink }}"/>{{ $title }}</a></h4>
+                            {{ end }}
+                        {{ end }}
+                    {{ else }}
+                        <h4><a href="{{ $link }}">{{ $title }}</a></h4>
+                    {{ end }}
+
+                    <p>{{ .Params.description }}</p>
+                </div>
+            {{ end }}
+        {{ end }}
+        </div>
+    </div>
+</div>

@@ -1,15 +1,35 @@
-+++
-title = "NSQ bus"
-description = "NSQ service bus implementation."
-date = 2018-07-19T12:43:15-07:00
-draft = false
-bref = "State t"
-toc = true
-type = "system"
-+++
+---
+title: NSQ
+description: NSQ service bus implementation
+date: 2018-07-19T12:43:15-07:00
+draf: false
+bref: NSQ is a perfect service bus for in-house usage
+toc: true
+type: system
+system: bus
+provider: nsq
+logo: nsq.png
+app: nsq
+---
 
-### Quick overview
+{{<provider>}}
 
-<p>Trigger system is responsible for reacting on state-changes events</p>
+[NSQ](https://nsq.io/) is a light-weight pub/sub service bus, written in Go and it's perfect for simple in-house installation.
+
+{{<warning "Authentication is not supported as of now.">}} 
 
 ### Configuration options
+
+| Param | Validation | Default | Description |
+|-------|------------|---------|-------------|
+| **lookup** ||| `lookupd` address |
+| **server** ||| `nsqd` address |
+
+### Example 
+
+```yaml
+system: bus
+provider: nsq
+lookup: nsqlookup.default.svc.cluster.local:4161
+server: nsqd.default.svc.cluster.local:4150
+```

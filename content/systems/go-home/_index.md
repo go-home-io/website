@@ -13,4 +13,4 @@ Quick overview
 ### Configuration options
 
 | Param | Validation | Default | Description |
-|-------|-----------|----------|-------------|
+|-------|------------|---------|-------------|

@@ -1,0 +1,13 @@
+<p>
+	<span class="label is-secondary warning">system: {{ $.Page.Params.system }}</span>
+
+{{ if ne $.Page.Params.provider nil }}
+	<span class="label is-secondary warning">provider: {{ $.Page.Params.provider }}</span>
+{{ end }}
+
+{{ if ne $.Page.Params.app nil }}
+    <span class="label is-secondary badge pulse success">
+        <a href="/apps/{{ $.Page.Params.app }}" target="_blank">app ready</a>
+    </span>
+{{ end }}
+</p>

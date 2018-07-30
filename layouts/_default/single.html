@@ -6,7 +6,7 @@
   <div id="content">
     <div id="main">
       <div id="hero">
-        <h1> {{ .Title }}</h1>
+        <h2> {{ .Title }}</h2>
         <p class="hero-lead">
              {{ .Params.bref  }}.
         </p>
@@ -21,7 +21,6 @@
       </div>
       </div>
   </div>
-
   {{ partial "subsections" (dict "page" . "from" .CurrentSection.Pages "link" "true" "title" .Parent.Title ) }}
 </div>
 {{ end }}

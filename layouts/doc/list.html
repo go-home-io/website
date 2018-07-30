@@ -1,4 +1,4 @@
 {{ define "title"}} {{ .Title}} {{end}}
 {{ define "header"}} {{ partial "header" . }} {{end}}
-{{ define "main"}} {{ partial "list" (dict "page" . ) }} {{ end }}
+{{ define "main"}} {{ partial "list" (dict "page" . "sort_by" "Weight" ) }} {{ end }}
 {{ define "footer" }} {{ partial "footer" . }} {{ end }}

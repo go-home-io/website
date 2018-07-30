@@ -1,0 +1,14 @@
+<p>
+    <span class="label is-secondary success">
+        <a href="https://github.com/go-home-io/helm/tree/master/{{ $.Page.Params.chart }}" target="_blank">
+            <img src="/img/GitHub-Mark.png"style="width:16px;height:16px;"/> chart: {{ $.Page.Params.chart }}</a>
+    </span>
+
+{{ if ne $.Page.Params.repo nil }}
+    <span class="label is-secondary success"><a href="{{ $.Page.Params.repo }}" target="_blank">repo</a></span>
+{{ end }}
+
+{{ if ne $.Page.Params.web nil }}
+    <span class="label is-secondary success"><a href="{{ $.Page.Params.web }}" target="_blank">website</a></span>
+{{ end }}
+</p>

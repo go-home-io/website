@@ -1,15 +1,13 @@
 ---
 title: 
 description:
-date: {{ .Date }}
+date: 2018-07-24T00:45:51-07:00
 draf: false
 bref: 
 toc: true
 type: system
 system:
 provider:
-logo:
-app:
 ---
 {{<provider>}}
 

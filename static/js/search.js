@@ -16,7 +16,6 @@ var fuseOptions = {
   ]
 };
 
-
 var searchQuery = param("s");
 
 $(document).ready(function() {
@@ -29,10 +28,6 @@ $(document).ready(function() {
 
   document.getElementById('search-query').focus();
 });
-
-
-
-
 
 function executeSearch(searchQuery){
   $.getJSON( "/index.json", function( data ) {

@@ -13,6 +13,8 @@ type: doc
 
 Most systems support wildcarding entities using glob patters. 
 
+{{<warning "Don't overdo wildard usage as it may result in unexpected behavior.">}}
+
 ### Syntax
 |Wildcard|Description|
 |--------|-----------|
