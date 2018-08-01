@@ -39,7 +39,7 @@ Boot from this SD card all others RPis. At this point you can start booting from
 On every node you need to setup static IP in `/etc/dhcpcd.conf` (use your network): 
 
 ```bash
-profile static_eth0
+profile static_wlan0
 static ip_address=192.168.0.101/24
 static routers=192.168.0.1
 static domain_name_servers=8.8.8.8

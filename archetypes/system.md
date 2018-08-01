@@ -17,5 +17,5 @@ Quick overview
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|

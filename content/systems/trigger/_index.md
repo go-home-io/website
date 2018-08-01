@@ -7,6 +7,9 @@ bref: Triggers system is responsible for reacting on various events occured in t
 toc: true
 type: system
 system: trigger
+provider:
+logo:
+app:
 ---
 {{<provider>}}
 
@@ -14,22 +17,22 @@ Trigger system is responsible for reacting on state-changes events. As an outpur
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **name** | required || Name of the trigger. Used as prefix for entity ID. |
-| **activeHrs** ||| If specified, this time range is used for limiting trigger actions. Format is ["Kitchen"](https://golang.org/pkg/time/#pkg-constants). For example `12:00PM-03:00PM` makes trigger to react for 3 hrs after noon only.|
-| **actions** | at least one || List of trigger actions.|
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **name** | yes | string || Name of the trigger. Used as prefix for entity ID |
+| **activeHrs** | | string in ["Kitchen"](https://golang.org/pkg/time/#pkg-constants) format || If specified, this time range is used for limiting trigger actions. For example `12:00PM-03:00PM` makes trigger to react for 3 hrs after noon only|
+| **actions** | at least one  ||| List of trigger actions |
 
 ### Trigger action
 
 Describes which actions should be taken if trigger is in `triggered` state. Actions will be executed one by one. 
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **system** | required || Describes which system this action belongs to. |
-| **entity** | required || [Glob]({{<relref "/docs/config/glob.md">}})-based entity ID which should be called. |
-| **command** | required || Command which should be called. |
-| **args** ||| List of arguments to pass to `command`.|
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **system** | yes | string || Describes which system this action belongs to |
+| **entity** | yes | string || [Glob]({{<relref "/docs/config/glob.md">}})-based entity ID which should be called |
+| **command** | yes | string || Command which should be called |
+| **args** |||| List of arguments to pass to `command` |
 
 #### Action systems
 

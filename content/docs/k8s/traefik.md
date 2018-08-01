@@ -12,7 +12,9 @@ type: doc
 
 Minimal setup requires to create a following `traefik.yaml` file (for the full list of options check github [repo](https://github.com/helm/charts/tree/master/stable/traefik)):
  
-{{<warning "DuckDNS is used as an example DNS registrator. You can find full list [here](https://docs.traefik.io/configuration/acme/).">}}
+{{<warning "DuckDNS is used as an example DNS registrator.">}}
+
+You can find full list of supported DNS-providers [here](https://docs.traefik.io/configuration/acme/).
  
 ```yaml
 ssl:

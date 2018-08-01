@@ -8,6 +8,8 @@ toc: true
 type: system
 system: trigger
 provider: state
+logo:
+app:
 ---
 {{<provider>}}
 
@@ -15,20 +17,20 @@ State trigger watches devices updates and reacts if actual state matches state d
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **logic** | one of `or`, `and` | `or` | Defines whether trigger should react on any or all state match. |
-| **delay** | seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger doesn't react. |
-| **pessimistic** | bool | `false` | If set to `true`, trigger reacts even upon first device load. |
-| **devices** | required | | List of devices to watch. |
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **logic** || one of `or`, `and` | `or` | Defines whether trigger should react on any or all state match |
+| **delay** || seconds | `0` | Defines whether trigger should react with delay. If delay is specified and after N seconds state not matches, trigger doesn't react |
+| **pessimistic** || bool | `false` | If set to `true`, trigger reacts even upon first device load |
+| **devices** | yes ||| List of devices to watch |
 
 ### Device definition
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **device** | required || [Glob]({{<relref "/docs/config/glob.md">}})-based device ID to watch. |
-| **property** | required || Property name to watch. |
-| **state** | required || Property desired state. |
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **device** | yes | string || [Glob]({{<relref "/docs/config/glob.md">}})-based device ID to watch |
+| **property** | yes | string || Property name to watch |
+| **state** | yes ||| Property desired state |
 
 ### Example 
 

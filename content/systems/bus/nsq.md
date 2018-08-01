@@ -11,7 +11,6 @@ provider: nsq
 logo: nsq.png
 app: nsq
 ---
-
 {{<provider>}}
 
 [NSQ](https://nsq.io/) is a light-weight pub/sub service bus, written in Go and it's perfect for simple in-house installation.
@@ -20,10 +19,10 @@ app: nsq
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **lookup** ||| `lookupd` address |
-| **server** ||| `nsqd` address |
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **lookup** | yes | string || `lookupd` address |
+| **server** | yes | string || `nsqd` address |
 
 ### Example 
 

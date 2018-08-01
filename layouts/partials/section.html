@@ -21,7 +21,7 @@
                         {{ range .Resources.ByType "image" }}
                             {{ if eq .Name $logo }}
                                 {{ $resized := .Resize "32x" }}
-                                <h4><a href="{{ $link }}"><img src="{{ $resized.RelPermalink }}"/>{{ $title }}</a></h4>
+                                <h4><a href="{{ $link }}"><img src="{{ $resized.RelPermalink }}"/> {{ $title }}</a></h4>
                             {{ end }}
                         {{ end }}
                     {{ else }}

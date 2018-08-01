@@ -7,6 +7,9 @@ bref: Security system allows to restrict access to certain resources for some us
 toc: true
 type: system
 system: security
+provider:
+logo:
+app:
 ---
 {{<provider>}}
 
@@ -23,23 +26,24 @@ Roles are defining set of rules and users. Be aware, go-home is not validating m
 
 Actual access will be defined by first rule, un-marshaled from config.
 
-Role is authorization part. Authentication is users srorage. 
+Role is authorization part. Authentication is a users storage. 
 
 > By default [Basic Authentication]({{<relref "basic-auth.md">}}) storage is used. 
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **rules** | required || List of rules for this role|
-| **users** | required || List of [glob]({{<relref "/docs/config/glob.md">}})-based user names who have this role|
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **rules** | yes ||| List of rules for this role |
+| **users** | yes | [ string ] || List of [glob]({{<relref "/docs/config/glob.md">}})-based user names who have this role|
 
 ### Rules configuration
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **system** | required || System which is described by this rule | 
-| **resources** | required || List of [glob]({{<relref "/docs/config/glob.md">}})-based entities affected by this rule |
-| **verbs** | required || List of verbs (operations) affected by this rule|
+
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **system** | yes | string || System which is described by this rule | 
+| **resources** | yes | [ string ] || List of [glob]({{<relref "/docs/config/glob.md">}})-based entities affected by this rule |
+| **verbs** | yes | [ string ] || List of verbs (operations) affected by this rule|
 
 #### Rule verbs
 

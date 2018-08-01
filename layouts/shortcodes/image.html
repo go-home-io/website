@@ -1,0 +1,21 @@
+<div>
+    {{ $name := .Get 0 }}
+
+    {{ $found := false }}
+    {{ range $.Page.Resources.ByType "image" }}
+        {{ if eq .Name $name }}
+            {{ $resized := .Resize "800x" }}
+            <img src="{{ $resized.RelPermalink }}" class="center" />
+            {{ $found := true}}
+        {{ end }}
+    {{ end }}
+
+    {{ if eq $found false }}
+        {{ range $.Page.Parent.Resources.ByType "image" }}
+            {{ if eq .Name $name }}
+                {{ $resized := .Resize "800x" }}
+                <img src="{{ $resized.RelPermalink }}" class="center" />
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

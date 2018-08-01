@@ -16,5 +16,7 @@ logo: logo.png
 
 Short description
 
+### Configuration options
+
 | Section | Param | Default | Description |
 |---------|-------|---------|-------------|

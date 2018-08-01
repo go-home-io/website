@@ -18,6 +18,8 @@ NSQ is a light-weight pub/sub service bus, written in Go and it's perfect for si
 
 {{<warning "Authentication is not supported as of now.">}} 
 
+### Configuration options
+
 | Section | Param | Default | Description |
 |---------|-------|---------|-------------|
 | **general** |
@@ -25,7 +27,7 @@ NSQ is a light-weight pub/sub service bus, written in Go and it's perfect for si
 || **replicas** | `1` | Number of `nsqd` replicas |
 | **docker** |
 || **image** | `gohomeio/nsq` | Image name | 
-|| **tag** | `latest` | Image tag | 
+|| **tag** | `1.0.0` | Image tag | 
 || **pullPolicy** | `IfNotPresent` | When to pull an image |
 | **resources** | 
 || **cpu.requests.lookup** | `100m` | CPU request for `lookup` service | 

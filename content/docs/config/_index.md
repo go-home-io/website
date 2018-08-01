@@ -9,7 +9,7 @@ toc: true
 type: doc
 ---
 
-go-home uses `yaml` for storing configuration. Because of the asbstraction level, it's possible to define almost anything in `yaml`.
+`go-home` uses `yaml` for storing configuration. Because of the asbstraction level, it's possible to define almost anything in `yaml`.
 
 To avoid confusion, all systems provides similar approach (sometimes similar config flags). 
 

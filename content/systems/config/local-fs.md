@@ -8,6 +8,8 @@ toc: true
 type: system
 system: config
 provider: fs
+logo:
+app:
 ---
 {{<provider>}}
 
@@ -17,9 +19,9 @@ Provider iterates over all nested folder and looking for files with `.yaml` exte
 
 ### Configuration options
 
-| Param | Validation | Default | Description |
-|-------|------------|---------|-------------|
-| **location** || Current working directory | Root folder containing config files. |
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **location** ||string| `cur_dir/configs` | Root folder containing config files |
 
 ### Example
 

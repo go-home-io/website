@@ -2,7 +2,7 @@ This repo contains `go-home` [webite](https://go-home.io).
 
 ### Static generation
 
-Website is staticly generated, using [Hugo](http://gohugo.io) and based on the awesome [Kube](http://kube.elemnts.org) theme.
+Website is statically generated, using [Hugo](http://gohugo.io) and based on the awesome [Kube](http://kube.elemnts.org) theme.
 
 To install Hugo, refer to official [documentation](http://gohugo.io/getting-started/installing/).
 
@@ -16,6 +16,7 @@ Where `kind` is one of:
 - `system` -- supported system overview
 - `device` -- supported device description
 - `doc` -- generic documentation
+- `app` -- [helm](https://helm.sh)-based [application](https://github.com/go-home-io/helm) 
 
 For example, creating a new trigger provider should look like 
 

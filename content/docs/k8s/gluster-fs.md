@@ -31,7 +31,7 @@ sudo gluster peer probe 192.168.0.103
 
 > At this point you can either choose to use separate storage for GlusterFS or create a loop [device](https://techdev.io/en/developer-blog/deploying-glusterfs-in-your-bare-metal-kubernetes-cluster).
 
-{{<warning "Below instructions are applicable to separate storage, for the loop device you'll have different paths. ">}} 
+{{<warning "Instructions below are applicable to separate storage, for the loop device you'll have different paths. ">}} 
 
 Get your device name: 
 ```bash

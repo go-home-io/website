@@ -3,12 +3,16 @@ title: Service bus
 description: Pub/Sub communication
 date: 2018-07-20T12:00:30-07:00
 draf: false
-bref: Service bus is used for all server-to-workers communications.
-toc: true
+bref: Service bus handles all communications between master and workers
+toc: false
 type: system
 system: bus
+provider:
+logo:
+app:
 ---
+{{<provider>}}
 
 ### Quick overview
 
-### Configuration options
+`go-home` uses service bus to avoid direct exposing of the workers to the internet. For simple usage [NSQ]({{<relref "/systems/bus/nsq.md">}}) is a great choice

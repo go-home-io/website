@@ -39,7 +39,7 @@ Install MetalLB:
 kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.7.1/manifests/metallb.yaml
 ```
 
-Modify `/etc/rc.local` and add the following before exit: 
+Modify `/etc/rc.local` and add the following before `exit`: 
 
 ```bash
 ifconfig wlan0 promisc
