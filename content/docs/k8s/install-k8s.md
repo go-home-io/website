@@ -7,6 +7,7 @@ weight: 20
 bref: Step-by-step guide for installing k8s on RPi
 toc: false
 type: doc
+logo: k8s.png
 ---
 
 > This guide is based on an awesome [gist](https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975) from **alexellis**.

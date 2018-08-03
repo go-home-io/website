@@ -7,6 +7,7 @@ weight: 30
 bref: GlusterFS with heketi provides persistent storage for your k8s cluster
 toc: false
 type: doc
+logo: gluster.png
 ---
 
 [GlusterFS](https://www.gluster.org) is a distributed cluster-ready storage backend. We're going to use it together with [heketi](https://github.com/heketi/heketi) -- REST wrapper on top of Gluster. 

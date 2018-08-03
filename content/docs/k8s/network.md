@@ -7,6 +7,7 @@ weight: 40
 bref: Configuring robust networking for the cluster 
 toc: false
 type: doc
+logo: k8s.png
 ---
 To easily manage your application it's better to use combination of [WaveNet](https://github.com/weaveworks/weave) and [MetalLB](https://metallb.universe.tf). First one is network plugin, second provides load balancer implementation for the bear-metal k8s clusters.
 

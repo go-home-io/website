@@ -22,6 +22,7 @@ It supports authentication and perfect for RPis since its low resources consumpt
 
 | Section | Param | Default | Description |
 |---------|-------|---------|-------------|
+|| **nameOverride** || Use this to override name of the chart |
 | **general** |
 || **namespace** | `default` | Namespace to install app into |
 | **docker** |

@@ -7,6 +7,7 @@ weight: 30
 bref: Detailed documentation with all steps required for your home cluster
 toc: false
 type: doc
+logo: k8s.png
 ---
 This section will guide you through the whole process of running [kubernetes](https://kubernetes.io) cluster on a Raspberry Pi machines.
 

@@ -7,6 +7,7 @@ weight: 20
 bref: Make the best of the system by using fluent configuration options
 toc: true
 type: doc
+logo:
 ---
 
 `go-home` uses `yaml` for storing configuration. Because of the asbstraction level, it's possible to define almost anything in `yaml`.
@@ -53,11 +54,11 @@ properties:
 
 Almost every config entry should have those three fields
 
-| Param | Validation | Default | Description |
-|-------|-----------|----------|-------------|
-| **system** | required || Defines which [system]({{<relref "/systems">}}) this entry belongs to. |
-| **provider** | required || Defines which system implamentation should be used. In most cases refers to plugin name.|
-| **name** | required* || Name for the loaded plugin. Used for prefixes while generating entity ID. Only [go-home]({{<relref "/systems/go-home">}}) system's master doesn't require name. |
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **system** | yes | string || Defines which [system]({{<relref "/systems">}}) this entry belongs to. |
+| **provider** | yes | string || Defines which system implamentation should be used. In most cases refers to plugin name.|
+| **name** | yes* | string || Name for the loaded plugin. Used for prefixes while generating entity ID. Only [go-home]({{<relref "/systems/go-home">}}) system's master doesn't require name. |
 
 
 ### How configs are processed

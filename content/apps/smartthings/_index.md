@@ -36,6 +36,7 @@ And use node's MAC address in your `MQTT Bridge` device.
 
 | Section | Param | Default | Description |
 |---------|-------|---------|-------------|
+|| **nameOverride** || Use this to override name of the chart |
 | **general** |
 || **namespace** | `default` | Namespace to install app into |
 || **nodeSelector** `static: true` | List of node labels to deploy to |

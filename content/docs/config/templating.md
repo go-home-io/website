@@ -7,6 +7,7 @@ weight: 20
 bref: Templating config files to avoid disclosing secrets
 toc: true
 type: doc
+logo:
 ---
 
 `go-home` uses golang [templates](https://golang.org/pkg/text/template/) to pre-process config files. 

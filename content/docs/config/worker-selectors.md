@@ -7,6 +7,7 @@ weight: 30
 bref: Allows to bind devices to specific workers
 toc: false
 type: doc
+logo:
 ---
 Every device and some other systems could be binded for processing to specific worker. This might be useful when you have `go-home` running in multiple locations and using selectors, you could distribute devices across these locations.
 

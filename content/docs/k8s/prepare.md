@@ -7,6 +7,7 @@ weight: 10
 bref: Making initial configuration for the devices
 toc: false
 type: doc
+logo: rpi.png
 ---
 
 [Download](https://www.raspberrypi.org/downloads/raspbian/) Raspbian Lite and flash it to SD card and all USBs. 

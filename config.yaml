@@ -29,3 +29,6 @@ outputs:
   home:
     - html
     - json
+imaging:
+  quality: 90
+  resampleFilter: "lanczos"

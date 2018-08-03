@@ -13,7 +13,7 @@ app: nsq
 ---
 {{<provider>}}
 
-[NSQ](https://nsq.io/) is a light-weight pub/sub service bus, written in Go and it's perfect for simple in-house installation.
+[NSQ](https://nsq.io/) is a light-weight and blazing-fast pub/sub service bus, written in Go and it's perfect for simple in-house installation.
 
 {{<warning "Authentication is not supported as of now.">}} 
 
@@ -21,7 +21,6 @@ app: nsq
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **lookup** | yes | string || `lookupd` address |
 | **server** | yes | string || `nsqd` address |
 
 ### Example 
@@ -29,6 +28,5 @@ app: nsq
 ```yaml
 system: bus
 provider: nsq
-lookup: nsqlookup.default.svc.cluster.local:4161
 server: nsqd.default.svc.cluster.local:4150
 ```

@@ -7,6 +7,7 @@ weight: 10
 bref: Glob is used to wildcard multiple entities
 toc: true
 type: doc
+logo:
 ---
 
 [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) is a matching pattern, used in most OSes. In go-home glob matching is powered by [globwas/glob](https://github.com/gobwas/glob) library.

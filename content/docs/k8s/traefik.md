@@ -7,6 +7,7 @@ weight: 50
 bref: Configuring Træfik as a cluster ingress controller 
 toc: false
 type: doc
+logo: traefik.png
 ---
 [Træfik](https://traefik.io) is kubernetes-ready blazing fast reverse-proxy server. Although nginx is more mature product, Træfik provides a lot of cool features out of the box, for example DNS-wildcarding through [Let's Encrypt](https://letsencrypt.org) support out of the box.
 
