@@ -8,14 +8,18 @@ menu:
       name: Docs
       url: /docs/
       weight: 10
+    - identifier: devices
+      name: Devices
+      url: /devices/
+      weight: 20
     - identifier: systems
       name: Systems
       url: /systems/
-      weight: 20
+      weight: 30
     - identifier: apps
       name: Apps
       url: /apps/
-      weight: 30
+      weight: 40
 pygmentsStyle: dracula
 pygmentsCodefences: true
 pygmentsCodefencesGuessSyntax: true

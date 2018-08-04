@@ -35,15 +35,15 @@ Role is authorization part. Authentication is a users storage.
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **rules** | yes ||| List of rules for this role |
-| **users** | yes | [ string ] || List of [glob]({{<relref "/docs/config/glob.md">}})-based user names who have this role|
+| **users** | yes | [string] || List of [glob]({{<relref "/docs/config/glob.md">}})-based user names who have this role|
 
 ### Rules configuration
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **system** | yes | string || System which is described by this rule | 
-| **resources** | yes | [ string ] || List of [glob]({{<relref "/docs/config/glob.md">}})-based entities affected by this rule |
-| **verbs** | yes | [ string ] || List of verbs (operations) affected by this rule|
+| **resources** | yes | [string] || List of [glob]({{<relref "/docs/config/glob.md">}})-based entities affected by this rule |
+| **verbs** | yes | [string] || List of verbs (operations) affected by this rule|
 
 #### Rule verbs
 

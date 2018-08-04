@@ -10,6 +10,10 @@
     @include flex-item-auto;
 }
 
+.small-box {
+    padding: 10px 10px 10px 10px !important;
+}
+
 .visited {
 	color: gray !important;
 }
@@ -23,6 +27,10 @@
 }
 
 .language-json {
+	background-color: transparent !important;
+}
+
+.language-go {
 	background-color: transparent !important;
 }
 

@@ -10,9 +10,9 @@ type: doc
 logo: helm.png
 ---
 
-`go-home` uses [Helm](https://helm.sh) package manager for deploying accompanying apps into k8s cluster. All apps are published into Helm repository, which is published to [GitHub Pages](https://pages.github.com) and available [here](https://apps.go-home.io).
+`go-home` uses [Helm](https://helm.sh) package manager to deploy accompanying apps into k8s cluster. All apps are published into Helm repository located at [GitHub Pages](https://pages.github.com). Charts repo is available [here](https://github.com/go-home-io/helm).
 
-To start using pre-built apps simply run 
+To start using pre-built apps simply run:
 
 ```bash
 helm repo add go-home https://apps.go-home.io
@@ -21,7 +21,18 @@ helm repo add go-home https://apps.go-home.io
 > Refer to official [documentation](https://docs.helm.sh/using_helm/#installing-helm) for helm installation details.
 
 
-To install any app, you can override default params by passing custom `value.yaml` file:  
+To install any app, you can override default params by passing custom `my_values.yaml` file:  
+
+```yaml
+auth:
+  gohome: pass1
+  smartthings: pass2
+
+docker: 
+  pullPolicy: Always
+```
+
+And pass it to the helm install command:
 
 ```bash
 $ helm install go-home/volantmq --values=my_values.yaml --name=mqtt
@@ -56,8 +67,11 @@ Consider using secrets!
 
 system: device
 provider: hub/mqtt
+login : gohome
+password: pass1
+
 login: smartthings
-password: pass
+password: pass2
 clientID: gohome
 broker: mqtt-volantmq.default.svc.cluster.local:1883
 

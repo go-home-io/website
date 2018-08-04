@@ -1,0 +1,55 @@
+{{ define "title"}} {{ .Title }} {{end}}
+{{ define "header"}}
+    {{ partial "header" . }}
+
+    <script src="{{ "js/devices.js" | relURL }}" type="text/javascript"></script>
+{{end}}
+{{ define "main"}}
+<div id="container">
+    <div id="main" style="width: 75%">
+        <div id="components">
+            <div class="row gutters">
+                {{ $pages := where .Site.Pages "Params.type" "device" }}
+                {{ range sort $pages "Title" "asc" }}
+                    {{ $logo := .Params.logo }}
+                    {{ $link := .Permalink}}
+                    {{ $title := .Title }}
+                        <div class="col col-2 item small-box {{ .Params.device }} device">
+                            {{ if ne $logo nil }}
+                                {{ range  .Parent.Resources.ByType "image" }}
+                                    {{ if eq .Name $logo }}
+                                        {{ $resized := .Resize "32x" }}
+                                            <img src="{{ $resized.RelPermalink }}"/>
+                                        <h4><a href="{{ $link }}">{{ $title }}</a></h4>
+                                    {{ end }}
+                                {{ end }}
+                            {{ else }}
+                                <h4><a href="{{ $link }}">{{ $title }}</a></h4>
+                            {{ end }}
+                            <p>{{ .Params.description }}</p>
+                        </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar" style="width: 20%; !important;">
+        <h5>Device type:</h5>
+        <nav id="contents">
+            <ol>
+                <ul>
+                    <li class="toc-list-item"><a href="#all" class="toc-link" onclick="showAll()">All</a></li>
+                    {{ $sections := (.Site.GetPage "section" .Section).Sections }}
+                    {{ range sort $sections "Title" "asc" }}
+                        <li class="toc-list-item">
+                            <a href="#{{ .Params.device }}" class="toc-link" onclick="filterDeviceType({{ .Params.device }})" >{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+{{ end }}
+{{ define "footer" }} {{ partial "footer" . }} {{ end }}

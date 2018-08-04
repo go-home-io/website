@@ -17,6 +17,6 @@ Providers in `go-home's` terminology are simple golang plugins, implementing sin
 
 All providers are pre-built for two architectures: `arm32v6` and `amd64`, allowing to run `go-home` on RPi and regular machines out of the box. 
 
-Thanks to the free OpenSource license from [Bintray](https://bintray.com) you don't need to actually download providers. `go-home` will determine required libraries and download them upon start. 
+Thanks to the free OpenSource license from [Bintray](https://bintray.com) you don't need to download providers manually. `go-home` will determine required libraries and download them upon start. 
 
-For k8s setup, to reduce data, it's suggested to use single `PersistentVolume` for all `go-home` servers.   
+> For k8s setup, to reduce transferred data, it's suggested to use single `PersistentVolume` for all `go-home` servers.   

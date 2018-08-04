@@ -51,7 +51,7 @@
                 {{ if and (eq .Permalink $cur)  (eq $link "true") }}
                     <a href="{{ .Permalink }}" class="visited">{{ .Title }}</a>
                 {{ else }}
-                        <a href="{{ .Permalink }}" class="toc-link">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}" class="toc-link">{{ .Title }}</a>
                 {{ end }}
               </li>
             {{ end }}

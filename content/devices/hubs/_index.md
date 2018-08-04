@@ -1,0 +1,4 @@
+---
+title: Hubs
+device: hub
+---
