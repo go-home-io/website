@@ -8,6 +8,8 @@ type: device
 device: hub
 provider: hue
 logo: hue.png
+introducedIn: 0.1
+updateType: internalPull
 ---
 {{<device>}}
 

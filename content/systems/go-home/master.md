@@ -10,6 +10,7 @@ system: go-home
 provider: master
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 
@@ -19,6 +20,7 @@ app:
 |-------|----------|------|---------|-------------|
 | **port** || port | `8080` | Port where `go-home` master is exposed | 
 | **delayedStart** || int | `0` | Delay in seconds which allows master to wait before all workers will come online. This helps to prevent unnecessary devices-reloads upon system start |
+| **units** || string | `imperial` | Metric or imperial system to use for the system |
 
 ### Example
 
@@ -26,5 +28,4 @@ app:
 system: go-home
 provider: master
 port: 8000
-delayedStart: 0
 ```

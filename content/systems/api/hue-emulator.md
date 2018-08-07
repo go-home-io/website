@@ -10,6 +10,7 @@ system: api
 provider: hue
 logo: hue.png
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 
@@ -35,6 +36,7 @@ API has to be running on a worker, which is located in the same sub-network, whe
 
 * `light` -- lights
 * `switch` -- switches
+* `group` -- groups
 
 ### Example
 

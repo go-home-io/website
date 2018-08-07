@@ -10,6 +10,7 @@ system: security
 provider: basic
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

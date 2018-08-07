@@ -10,6 +10,7 @@ system: config
 provider: k8s
 logo: k8s.png
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

@@ -10,6 +10,7 @@ system: bus
 provider: nsq
 logo: nsq.png
 app: nsq
+introducedIn: 0.1
 ---
 {{<provider>}}
 

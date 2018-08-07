@@ -8,6 +8,8 @@ type: device
 device:
 provider:
 logo:
+introducedIn:
+updateType: 
 ---
 {{<device>}}
 

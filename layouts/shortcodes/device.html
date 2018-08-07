@@ -1,4 +1,10 @@
 <p>
     <span class="label is-secondary warning">system: device</span>
     <span class="label is-secondary warning">provider: {{ $.Page.Params.device }}/{{ $.Page.Params.provider }}</span>
+{{ if ne $.Page.Params.introducedIn nil }}
+    <span class="label is-secondary">introduced in v{{ $.Page.Params.introducedIn }}</span>
+{{ end }}
+{{ if ne $.Page.Params.updateType nil }}
+    <a href="/docs/devices/"><span class="label is-secondary"> <i class="{{ $.Page.Params.updateType }}"> update type</i></span></a>
+{{end}}
 </p>

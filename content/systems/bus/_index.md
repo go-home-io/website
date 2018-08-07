@@ -10,6 +10,7 @@ system: bus
 provider:
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

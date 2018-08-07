@@ -10,6 +10,7 @@ system: trigger
 provider: state
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

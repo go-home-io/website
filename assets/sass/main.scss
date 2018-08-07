@@ -1,4 +1,6 @@
 @import "./kube/kube.scss";
+@import "./font-awesome/fontawesome.scss";
+@import "./font-awesome/solid.scss";
 
 #container {
     @include grid-row;
@@ -48,4 +50,44 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.externalPull {
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-cloud-download-alt);
+    }
+}
+
+.externalPush {
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-cloud-upload-alt);
+    }
+}
+
+.internalPull {
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-file-download);
+    }
+}
+
+.internalPush {
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-file-upload);
+    }
+}
+
+.pubSub {
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-random);
+    }
 }

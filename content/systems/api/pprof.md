@@ -10,6 +10,7 @@ system: api
 provider: pprof
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

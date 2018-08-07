@@ -8,6 +8,8 @@ type: device
 device: light
 provider: zengge
 logo: zengge.png
+introducedIn: 0.1
+updateType: internalPull
 ---
 {{<device>}}
 

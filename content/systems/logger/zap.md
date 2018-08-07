@@ -10,6 +10,7 @@ system: logger
 provider: zap
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

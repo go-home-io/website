@@ -8,6 +8,8 @@ type: device
 device: hub
 provider: mqtt
 logo: mqtt.png
+introducedIn: 0.1
+updateType: pubSub
 ---
 {{<device>}}
 
@@ -33,6 +35,7 @@ MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho]
 | **qos** || int | `2` | [Quality of service](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/qos.html) |
 | **retained** || bool | `false` | Flag indicating whether commands messages for this device should be posted as retained | 
 | **pessimistic** || bool | `false` | Flag indicating whether device should use pessimistic mode. In this mode, after using any command, device is not waiting for the update message from the broker and sets it's internal state automatically to whatever was received from a command | 
+| **units** || string | `imperial` | Metric or imperial system to use for this device (if required for the device) |
 | **properties** || [property]|| List of mapped properties |
 | **commands** || [command]|| List of mapped commands | 
 

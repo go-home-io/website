@@ -10,6 +10,7 @@ system: config
 provider: fs
 logo:
 app:
+introducedIn: 0.1
 ---
 {{<provider>}}
 

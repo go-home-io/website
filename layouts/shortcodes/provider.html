@@ -10,4 +10,8 @@
         <a href="/apps/{{ $.Page.Params.app }}" target="_blank">app ready</a>
     </span>
 {{ end }}
+
+{{ if ne $.Page.Params.introducedIn nil }}
+    <span class="label is-secondary">introduced in v{{ $.Page.Params.introducedIn }}</span>
+{{ end }}
 </p>
