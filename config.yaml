@@ -2,6 +2,7 @@ baseURL: https://go-home.io
 languageCode: en-us
 title: go-home
 enableGitInfo: true
+googleAnalytics: UA-124564092-1
 menu: 
   main: 
     - identifier: docs
