@@ -2,7 +2,7 @@
 title: GlusterFS
 description: Installing distributed FS
 date: 2018-07-26T02:22:32-07:00
-draf: false
+draft: false
 weight: 30
 bref: GlusterFS with heketi provides persistent storage for your k8s cluster
 toc: false

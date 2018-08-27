@@ -2,7 +2,7 @@
 title: Applications
 description: Third-party apps
 date: 2018-08-03T01:39:36-07:00
-draf: false
+draft: false
 weight: 20
 bref: Third-party applications accompanying go-home 
 toc: false

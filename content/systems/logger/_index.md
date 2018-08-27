@@ -2,7 +2,7 @@
 title: Logger
 description: Log system
 date: 2018-08-04T12:14:01-07:00
-draf: false
+draft: false
 bref: System-wide logger implementation
 toc: false
 type: system

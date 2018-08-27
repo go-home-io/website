@@ -2,7 +2,7 @@
 title: Worker
 description: Worker server configuration
 date: 2018-07-31T17:33:35-07:00
-draf: false
+draft: false
 bref: Possible configuration of the go-home worker server
 toc: false
 type: system

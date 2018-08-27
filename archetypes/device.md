@@ -2,8 +2,8 @@
 title: 
 description:
 date: {{ .Date }}
-draf: false
-toc: false
+draft: false
+toc: true
 type: device
 device:
 provider:
@@ -19,6 +19,16 @@ Quick overview
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
+
+### Supported properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+
+### Supported commands
+
+| Command | Input | Description |
+| --------|-------|-------------|
 
 ### Example
 

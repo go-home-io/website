@@ -2,7 +2,7 @@
 title: Network
 description: Network setup
 date: 2018-07-26T14:54:13-07:00
-draf: false
+draft: false
 weight: 40
 bref: Configuring robust networking for the cluster 
 toc: false

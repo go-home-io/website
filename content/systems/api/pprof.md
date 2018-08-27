@@ -2,7 +2,7 @@
 title: pprof
 description: Proriler
 date: 2018-07-31T19:39:58-07:00
-draf: false
+draft: false
 bref: Master server pprof data 
 toc: false
 type: system

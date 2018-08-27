@@ -2,7 +2,7 @@
 title: NSQ
 description: NSQ service bus implementation
 date: 2018-07-19T12:43:15-07:00
-draf: false
+draft: false
 bref: NSQ is a perfect service bus for in-house usage
 toc: true
 type: system

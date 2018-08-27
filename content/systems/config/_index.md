@@ -2,7 +2,7 @@
 title: Config
 description: Configs storage reader
 date: 2018-07-23T20:05:53-07:00
-draf: false
+draft: false
 bref: Configs storage allows to read configuration from various sources
 toc: true
 type: system

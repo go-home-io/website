@@ -2,7 +2,7 @@
 title: 
 description:
 date: {{ .Date }}
-draf: false
+draft: false
 bref: 
 toc: false
 sidebar: false

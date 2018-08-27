@@ -2,7 +2,7 @@
 title: MQTT
 description: Generic MQTT hub
 date: 2018-08-04T12:12:28-07:00
-draf: false
+draft: false
 toc: true
 type: device
 device: hub
@@ -31,13 +31,14 @@ MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho]
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **type** | yes | string || Device type |
+| **sensorType** ||string || If device is a sensor, you can specify its type |
 | **name** | yes | string || Device name | 
 | **qos** || int | `2` | [Quality of service](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/qos.html) |
 | **retained** || bool | `false` | Flag indicating whether commands messages for this device should be posted as retained | 
 | **pessimistic** || bool | `false` | Flag indicating whether device should use pessimistic mode. In this mode, after using any command, device is not waiting for the update message from the broker and sets it's internal state automatically to whatever was received from a command | 
 | **units** || string | `imperial` | Metric or imperial system to use for this device (if required for the device) |
 | **properties** || [property]|| List of mapped properties |
-| **commands** || [command]|| List of mapped commands | 
+| **commands** || [command]|| List of mapped commands |
 
 #### Property 
 
@@ -59,6 +60,14 @@ MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho]
 
 * `sensor` 
 * `switch`
+
+### Supported properties
+
+Depends on a device
+
+### Supported commands
+
+Depends on a device
 
 ### Example 
 

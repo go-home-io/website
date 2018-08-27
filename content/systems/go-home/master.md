@@ -2,7 +2,7 @@
 title: Master
 description: Master server configuration
 date: 2018-07-31T17:09:36-07:00
-draf: false
+draft: false
 bref: Possible configuration of the go-home master server
 toc: false
 type: system

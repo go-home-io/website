@@ -2,7 +2,7 @@
 title: NSQ
 description: NSQ service bus
 date: 2018-07-25T03:02:18-07:00
-draf: false
+draft: false
 bref: NSQ is a perfect service bus for in-house usage
 toc: false
 sidebar: false

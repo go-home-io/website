@@ -2,7 +2,7 @@
 title: Secrets
 description: Secrets storage
 date: 2018-07-24T00:45:51-07:00
-draf: false
+draft: false
 bref: Secrets storage allows to read secret variables from various sources
 toc: true
 type: system

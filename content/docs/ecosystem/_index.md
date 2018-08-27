@@ -2,7 +2,7 @@
 title: Ecosystem
 description: Accompanying apps
 date: 2018-08-03T01:39:15-07:00
-draf: false
+draft: false
 weight: 10
 bref: go-home plugins and applications 
 toc: false

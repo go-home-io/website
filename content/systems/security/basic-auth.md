@@ -2,7 +2,7 @@
 title: Basic Auth
 description: Default Basic Auth user storage
 date: 2018-07-23T20:32:35-07:00
-draf: false
+draft: false
 bref: Simple file-based Basic Auth provider
 toc: true
 type: system

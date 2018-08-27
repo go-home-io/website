@@ -2,7 +2,7 @@
 title: 
 description:
 date: {{ .Date }}
-draf: false
+draft: false
 weight: 20
 bref: 
 toc: true

@@ -2,7 +2,7 @@
 title: Glob syntax
 description: Regexp-like syntax
 date: 2018-07-23T15:22:34-07:00
-draf: false
+draft: false
 weight: 10
 bref: Glob is used to wildcard multiple entities
 toc: true

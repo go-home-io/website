@@ -2,7 +2,7 @@
 title: Worker selectors
 description: Binding devices to workers
 date: 2018-07-31T19:14:18-07:00
-draf: false
+draft: false
 weight: 30
 bref: Allows to bind devices to specific workers
 toc: false

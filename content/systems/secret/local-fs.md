@@ -2,7 +2,7 @@
 title: Local FS
 description: Local file storage secrets provider
 date: 2018-07-31T13:55:25-07:00
-draf: false
+draft: false
 bref: Provides secrets from file stored on local file storage
 toc: true
 type: system

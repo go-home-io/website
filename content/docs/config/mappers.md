@@ -2,7 +2,7 @@
 title: Mappers
 description: Config mappers
 date: 2018-08-04T13:24:17-07:00
-draf: false
+draft: false
 weight: 40
 bref: Data conversion in config files
 toc: true

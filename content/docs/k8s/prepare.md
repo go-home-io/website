@@ -2,7 +2,7 @@
 title: Preparation
 description: Preparing your RPis 
 date: 2018-07-25T01:21:12-07:00
-draf: false
+draft: false
 weight: 10
 bref: Making initial configuration for the devices
 toc: false

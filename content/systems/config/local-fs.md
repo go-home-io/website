@@ -2,7 +2,7 @@
 title: Local FS
 description: Local file storage configs loader
 date: 2018-07-24T00:38:02-07:00
-draf: false
+draft: false
 bref: Provides data from config files location on local file storage
 toc: true
 type: system

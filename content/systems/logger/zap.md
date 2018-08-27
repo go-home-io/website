@@ -2,7 +2,7 @@
 title: zap
 description:
 date: 2018-08-04T12:14:25-07:00
-draf: false
+draft: false
 bref: zap logger provider
 toc: false
 type: system

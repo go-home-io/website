@@ -2,7 +2,7 @@
 title: Groups
 description: Groping devices
 date: 2018-08-05T22:34:20-07:00
-draf: false
+draft: false
 weight: 50
 bref: Combining multiple devices into one group
 toc: false

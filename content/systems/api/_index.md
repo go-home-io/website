@@ -2,7 +2,7 @@
 title: API
 description: Extending default APIs 
 date: 2018-07-31T19:04:58-07:00
-draf: false
+draft: false
 bref: Extended APIs allow to add additional functionality to go-home servers
 toc: false
 type: system

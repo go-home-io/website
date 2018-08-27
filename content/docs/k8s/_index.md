@@ -2,7 +2,7 @@
 title: k8s install
 description: Preparing your RPi cluster
 date: 2018-07-25T01:20:24-07:00
-draf: false
+draft: false
 weight: 30
 bref: Detailed documentation with all steps required for your home cluster
 toc: false

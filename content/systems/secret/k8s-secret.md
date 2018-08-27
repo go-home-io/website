@@ -2,7 +2,7 @@
 title: k8s secret
 description: Supplies secrets from k8s secret 
 date: 2018-07-31T16:54:51-07:00
-draf: false
+draft: false
 bref: Allows to integrate with k8s secrets and use them as secret provider for go-home
 toc: true
 type: system

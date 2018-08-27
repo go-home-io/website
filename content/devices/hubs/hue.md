@@ -2,8 +2,8 @@
 title: Philips HUE
 description: Philips HUE hub
 date: 2018-08-03T18:10:54-07:00
-draf: false
-toc: false
+draft: false
+toc: true
 type: device
 device: hub
 provider: hue
@@ -36,6 +36,27 @@ For the loaded groups, associated scenes will be loaded as well.
 * `lights` -- physical lights
 * `groups` -- logical groups
 
+### Supported properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `on` | bool | Flag indicating whether device is on |
+| `brightness` | percent | Current brightness level | 
+| `color` | {r,g,b} | Current color |
+| `transition_time` | float | For certain bulbs shows transition time to next state |
+| `scenes` | [string] | For groups only shows list of predefined scenes | 
+
+### Supported commands
+
+| Command | Input | Description |
+| --------|-------|-------------|
+| `on` || Turns the device on |
+| `off` || Turns the device off |
+| `toggle` || Toggles the device state | 
+| `set-brightness` | percent | Sets the device brightness |
+| `set-color` | {r,g,b} | For colorful bulbs sets color | 
+| `set-transition-time` | float | For certain bulbs sets transition time |
+| `set-scene` | string | For groups only sets onf of the predefined scenes |
 
 ### Example
 

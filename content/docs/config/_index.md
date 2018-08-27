@@ -2,7 +2,7 @@
 title: Config techniques 
 description: Advanced configuration options
 date: 2018-07-23T15:26:42-07:00
-draf: false
+draft: false
 weight: 20
 bref: Make the best of the system by using fluent configuration options
 toc: true

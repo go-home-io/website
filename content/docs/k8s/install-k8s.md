@@ -2,7 +2,7 @@
 title: Installing k8s
 description:
 date: 2018-07-25T01:21:00-07:00
-draf: false
+draft: false
 weight: 20
 bref: Step-by-step guide for installing k8s on RPi
 toc: false

@@ -2,7 +2,7 @@
 title: Service bus
 description: Pub/Sub communication
 date: 2018-07-20T12:00:30-07:00
-draf: false
+draft: false
 bref: Service bus handles all communications between master and workers
 toc: false
 type: system

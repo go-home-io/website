@@ -2,7 +2,7 @@
 title: HUE emulator
 description: Emulating HUE hub
 date: 2018-07-31T20:26:40-07:00
-draf: false
+draft: false
 bref: Allows to emulate Philips HUE hub and expose devices though it
 toc: true
 type: system

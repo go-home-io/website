@@ -2,7 +2,7 @@
 title: Trigger
 description: System-wide events
 date: 2018-07-19T12:43:15-07:00
-draf: false
+draft: false
 bref: Triggers system is responsible for reacting on various events occured in the go-home system
 toc: true
 type: system

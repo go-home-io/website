@@ -2,8 +2,8 @@
 title: Yahoo
 description: Yahoo weather
 date: 2018-08-07T00:56:19-07:00
-draf: false
-toc: false
+draft: false
+toc: true
 type: device
 device: weather
 provider: yahoo
@@ -23,7 +23,7 @@ Quick overview
 | **pollingInterval** || int | `10` | Interval in minutes between the updates |
 | **properties** || [string] || List of properties to query |
 
-#### Supported properties
+### Supported properties
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -35,6 +35,10 @@ Quick overview
 | `wind_speed` | float | Current wind speed |
 | `sunrise` | string | Time of sunrise |
 | `sunset` | string | Time of sunset |
+
+### Supported commands
+
+None
 
 ### Example
 

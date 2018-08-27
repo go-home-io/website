@@ -2,7 +2,7 @@
 title: k8s config map
 description: Loads data from k8s config map
 date: 2018-07-24T00:58:10-07:00
-draf: false
+draft: false
 bref: Allows to integrate with k8s config maps and use them as a storage
 toc: true
 type: system

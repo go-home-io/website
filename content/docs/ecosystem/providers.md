@@ -2,7 +2,7 @@
 title: Providers
 description: go-home plugins
 date: 2018-08-03T01:39:30-07:00
-draf: false
+draft: false
 weight: 20
 bref: go-home plugins
 toc: false

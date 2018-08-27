@@ -2,7 +2,7 @@
 title: go-home
 description: Servers config
 date: 2018-07-23T20:04:03-07:00
-draf: false
+draft: false
 bref: go-home servers configuration
 toc: false
 type: system

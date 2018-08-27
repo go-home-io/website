@@ -2,7 +2,7 @@
 title: SmartThings
 description: MQTT broker bridge
 date: 2018-07-31T11:56:00-07:00
-draf: false
+draft: false
 bref: System to share and control SmartThings device states in MQTT
 toc: false
 sidebar: false

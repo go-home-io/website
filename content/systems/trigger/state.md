@@ -2,7 +2,7 @@
 title: State trigger
 description: State triggers overview
 date: 2018-07-19T12:43:15-08:00
-draf: false
+draft: false
 bref: State trigger watches devices state
 toc: true
 type: system

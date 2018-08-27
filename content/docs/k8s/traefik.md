@@ -2,7 +2,7 @@
 title: Træfik
 description: Installing Træfik
 date: 2018-07-26T15:30:46-07:00
-draf: false
+draft: false
 weight: 50
 bref: Configuring Træfik as a cluster ingress controller 
 toc: false
