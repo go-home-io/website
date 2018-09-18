@@ -13,7 +13,7 @@ updateType: externalPull
 ---
 {{<device>}}
 
-Quick overview
+This plugin allows to query a current weather from [Yahoo](https://www.yahoo.com/news/weather).
 
 ### Configuration options
 

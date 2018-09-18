@@ -54,3 +54,13 @@ Then setup through `raspi-config`:
 * Host name, e.g. `k8s-master-1`, `k8s-worker-1`, `k8s-worker-2`, etc. 
 * Change pi password 
 * Enable `sshd` server
+
+ Last but not least is to enable `ntp` which will sync clocks between your workers. This is extremely important since server will drop too old messages. 
+ 
+ > `ntp` is disabled by default in the latest system versions.
+
+ ```bash
+ sudo apt install ntp
+ sudo systemctl enable ntp
+ sudo timedatectl set-ntp 1
+ ```
