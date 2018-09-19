@@ -74,8 +74,17 @@ printf $(cat /mnt/data/miio/device.token) | xxd -p
 | **vac_status** | status | Status of the vacuum | 
 | **battery_level** | percent | Current battery level | 
 | **fan_speed** | percent | Current fan speed | 
-| **area** | float | Last cleaned area | 
-| **duration** | float | Time of the last cleaning |
+| **area** | float | Last cleaned area (m2/ft2) | 
+| **duration** | float | Time of the last cleaning (in seconds) |
+
+#### Vacuum statuses
+
+* `unknown` - Unknown status
+* `cleaning` - Vacuum is in a cleaning state
+* `paused` - Cleaning paused
+* `docked` - Vacuum is at the dock
+* `charging` - Vacuum is charging
+* `full` - Vacuum dust bag is full
 
 ### Supported commands
 
