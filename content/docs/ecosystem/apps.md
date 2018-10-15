@@ -77,7 +77,7 @@ broker: mqtt-volantmq.default.svc.cluster.local:1883
 
 ```
 
-{{<warning "Since apps are updating frequently, you might to run update first:">}}
+{{<warning "Since apps are updating frequently, you might want to run update first:">}}
 
 ```bash
 helm repo update

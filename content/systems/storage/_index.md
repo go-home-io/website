@@ -21,3 +21,9 @@ Storage system is a backend for saving devices state data. If storage is not con
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **storeHeartbeat** || bool | `false` | Flag indicating whether pings from devices should be stored |
+| **exclude** |||| List of [glob]({{<relref "/docs/config/glob.md">}})-based entities to exclude from storing |
+| **include** |||| List of [glob]({{<relref "/docs/config/glob.md">}})-based entities to include into storing even if this device type is excluded by default |
+
+### List of excluded device types
+
+* `camera` - Saving raw pictures might increase your DB size dramatically. 

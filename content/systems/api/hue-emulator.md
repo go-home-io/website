@@ -14,6 +14,8 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
+{{<warning "Hue emulator must be executed on a hostNetwork (static workers ih Helm chart).">}}
+
 By emulating HUE hub, you can expose `go-home` devices to Alexa/Google Home, etc. 
 
 API has to be running on a worker, which is located in the same sub-network, where target consumer is located.
@@ -34,9 +36,12 @@ API has to be running on a worker, which is located in the same sub-network, whe
 
 ### Supported device types
 
-* `light` -- lights
-* `switch` -- switches
-* `group` -- groups
+| Device | Command `on` | Command `off` | Command `set-brightness` | Property `on` | Property `brightness`|
+|--------|--------------|---------------|--------------------------|--------------|-------------------------|
+| `light` | `on` | `off` | `set-brightness` | `on` | `brightness` |
+| `switch` | `on` | `off` | | `on` | |
+| `vacuum` | `on` | `off` | `set-fan-speed` | status == `cleaning` | `fan_speed` |
+| `group` ||| depends on group |
 
 ### Example
 

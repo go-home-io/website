@@ -1,10 +1,27 @@
 <p>
     <span class="label is-secondary warning">system: device</span>
     <span class="label is-secondary warning">provider: {{ $.Page.Params.device }}/{{ $.Page.Params.provider }}</span>
+{{ if ne $.Page.Params.app nil }}
+    <span class="label is-secondary badge pulse success">
+        <a href="/apps/{{ $.Page.Params.app }}" target="_blank">app ready</a>
+    </span>
+{{ end }}
 {{ if ne $.Page.Params.introducedIn nil }}
     <span class="label is-secondary">introduced in v{{ $.Page.Params.introducedIn }}</span>
 {{ end }}
 {{ if ne $.Page.Params.updateType nil }}
-    <a href="/docs/devices/"><span class="label is-secondary"> <i class="{{ $.Page.Params.updateType }}"> {{ $.Page.Params.updateType }}</i></span></a>
+    <a href="/docs/devices/"><span class="label is-secondary"> <i class="upd_{{ $.Page.Params.updateType }}"> {{ $.Page.Params.updateType }}</i></span></a>
+{{end}}
+
+{{if ne $.Page.Params.sensor nil }}
+    <a href="/docs/devices/sensors"><span class="label is-secondary"> <i class="sen_{{ $.Page.Params.sensor }}"> {{ $.Page.Params.sensor }}</i></span></a>
+{{end}}
+
+{{if ne $.Page.Params.arch nil }}
+    <span class="label is-secondary error">Arch restricted: {{ $.Page.Params.arch }}</span>
+{{end}}
+
+{{if ne $.Page.Params.gpio nil}}
+    <a href="/docs/devices/gpio#{{ $.Page.Params.gpio }}"><span class="label is-secondary success">GPIO: {{ $.Page.Params.gpio | upper }}</span></a>
 {{end}}
 </p>

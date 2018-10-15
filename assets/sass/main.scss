@@ -24,6 +24,10 @@
 	background-color: transparent !important;
 }
 
+.language-golang {
+	background-color: transparent !important;
+}
+
 .language-bash {
 	background-color: transparent !important;
 }
@@ -52,7 +56,8 @@
     margin-right: auto;
 }
 
-.externalPull {
+.upd_externalPull {
+    vertical-align: 0 !important;
     @include fa-icon;
     @extend .fas;
     &:before {
@@ -60,7 +65,8 @@
     }
 }
 
-.externalPush {
+.upd_externalPush {
+    vertical-align: 0 !important;
     @include fa-icon;
     @extend .fas;
     &:before {
@@ -68,15 +74,29 @@
     }
 }
 
-.internalPull {
+.upd_internalPull {
+    vertical-align: 0 !important;
     @include fa-icon;
     @extend .fas;
     &:before {
         content: fa-content($fa-var-file-download);
     }
+    &:after{
+        font-family: normal;
+    }
 }
 
-.internalPush {
+.upd_pull {
+    vertical-align: 0 !important;
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-download);
+    }
+}
+
+.upd_internalPush {
+    vertical-align: 0 !important;
     @include fa-icon;
     @extend .fas;
     &:before {
@@ -84,10 +104,72 @@
     }
 }
 
-.pubSub {
+.upd_pubSub {
+    vertical-align: 0 !important;
     @include fa-icon;
     @extend .fas;
     &:before {
         content: fa-content($fa-var-random);
     }
 }
+
+.sen_lock {
+    vertical-align: 0 !important;
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-lock);
+    }
+}
+
+.sen_temperature {
+    vertical-align: 0 !important;
+    @include fa-icon;
+    @extend .fas;
+    &:before {
+        content: fa-content($fa-var-thermometer-empty);
+    }
+}
+
+.sen_presence {
+    font-style: normal;
+    &:before{
+        font-family: "Material Icons";
+        content: "face";
+    }
+}
+
+.sen_generic {
+    font-style: normal;
+    &:before{
+        font-family: "Material Icons";
+        content: "device_unknown";
+    }
+}
+
+.sen_button {
+    font-style: normal;
+    &:before{
+        font-family: "Material Icons";
+        content: "touch_app";
+    }
+}
+
+.sen_motion {
+    font-style: normal;
+    &:before{
+        font-family: "Material Icons";
+        content: "transfer_within_a_station";
+    }
+}
+
+#sharedcontent {
+    counter-reset: count;
+    max-width: 400px;
+    margin: 24px auto 60px auto;
+    padding: 32px;
+    background: #fbfbfb;
+    border: 1px solid rgba(0, 0, 0, 0.08); }
+    #sharedcontent.wide {
+      max-width: none;
+      margin-bottom: 24px; }

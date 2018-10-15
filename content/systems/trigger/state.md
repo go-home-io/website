@@ -31,7 +31,8 @@ State trigger watches devices updates and reacts if actual state matches state d
 |-------|----------|------|---------|-------------|
 | **device** | yes | string || [Glob]({{<relref "/docs/config/glob.md">}})-based device ID to watch |
 | **property** | yes | string || Property name to watch |
-| **state** | yes ||| Property desired state |
+| **state** | either state or mapper ||| Property desired state |
+| **mapper** |either state or mapper| string|| Property [mapper]({{<relref "/docs/config/mappers.md">}}), must return bool |
 
 ### Example 
 
@@ -76,4 +77,20 @@ actions:
   - system: device
   	entity: hue.light.group_hallway
   	command: "off"
+```
+
+The following example will turn off lights if no motions was detected after the last camera update: 
+
+```yaml
+system: trigger
+provider: state
+name: hallway lights off
+devices:
+  - device: hallway_camera.*
+    property: distance
+    mapper: num(payload) <= 5
+actions:
+  - system: device
+    entity: group.hallway_lights
+    command: "off"
 ```

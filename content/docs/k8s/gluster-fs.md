@@ -16,6 +16,8 @@ logo: gluster.png
 
 Install required packages:
 
+> If you're not planning to run Gluster on every node, skip `glusterfs-server` for them.
+
 ```bash
 sudo apt-get install -y xfsprogs glusterfs-server glusterfs-client lvm2 thin-provisioning-tools
 ```
@@ -210,3 +212,5 @@ kubectl create -f class.yaml && kubectl patch storageclass gluster -p '{"metadat
 ```
 
 Now cluster is ready to provision PVCs.
+
+> If you want to have access to the Heketi status without SSH-ing into the nodes, you can install [heketi-ui]({{<relref "/apps/heketi-ui">}}) app.

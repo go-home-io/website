@@ -19,4 +19,4 @@ All providers are pre-built for two architectures: `arm32v6` and `amd64`, allowi
 
 Thanks to the free OpenSource license from [Bintray](https://bintray.com) you don't need to download providers manually. `go-home` will determine required libraries and download them upon start. 
 
-> For k8s setup, to reduce transferred data, it's suggested to use single `PersistentVolume` for all `go-home` servers.   
+> For k8s setup, to reduce transferred data, it's suggested to use single `PersistentVolume` for all `go-home` servers. If you've chosen to do so, it's better to run [Bintray Proxy]({{<relref "/apps/bintray-proxy">}}) app.

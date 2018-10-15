@@ -30,10 +30,10 @@ NSQ is a light-weight pub/sub service bus, written in Go and it's perfect for si
 || **tag** | `1.0.0` | Image tag | 
 || **pullPolicy** | `IfNotPresent` | When to pull an image |
 | **resources** | 
-|| **cpu.requests** | `100m` | CPU request for the service | 
-|| **cpu.limits** | `100m` | CPU limit for the service |
-|| **memory.requests** | `20Mi` | Memory request for the service | 
-|| **memory.limits** | `30Mi` | Memory limit for the service |
+|| **cpu.requests** | `300m` | CPU request for the service | 
+|| **cpu.limits** | `400m` | CPU limit for the service |
+|| **memory.requests** | `100Mi` | Memory request for the service | 
+|| **memory.limits** | `200Mi` | Memory limit for the service |
 | **inbound** |
 || **clusterNS** | `cluster.local` | k8s default DNS name |
 || **tcp** | `4160` | `nsqd` service tcp port |

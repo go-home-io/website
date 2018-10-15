@@ -31,9 +31,9 @@ It supports authentication and perfect for RPis since its low resources consumpt
 || **pullPolicy** | `IfNotPresent` | When to pull an image |
 | **resources** | 
 || **cpu.requests** | `100m` | CPU request for the broker | 
-|| **cpu.limits** | `100m` | CPU limit for the broker | 
+|| **cpu.limits** | `200m` | CPU limit for the broker | 
 || **memory.requests** | `40Mi` | Memory request for the broker | 
-|| **memory.limits** | `60Mi` | Memory limit for the broker | 
+|| **memory.limits** | `120Mi` | Memory limit for the broker | 
 | **inbound** |
 || **http** | `8080` | HTTP port. Used for health-checks only |
 || **mqtt** | `1883` | MQTT port, exposed through service | 

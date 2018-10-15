@@ -15,6 +15,8 @@ updateType: internalPull
 
 Plugin provides control of Xiaomi vacuum (gen 1 and 2). 
 
+> Vacuum tends to ignore about 20% status requests, so you might see update in UI with some delay. So far provider uses 1 second delay between sending the command and requesting an update. 
+
 To begin using this plugin you need to obtain a token from the device. There're multiple options available, unfortunately all of them are kinda complicated. Since the last few versions vacuum changes its token after paring with the app and no longer advertises it. Below are possible ways to get it. 
 
 ### iOS app
@@ -83,7 +85,7 @@ printf $(cat /mnt/data/miio/device.token) | xxd -p
 * `cleaning` - Vacuum is in a cleaning state
 * `paused` - Cleaning paused
 * `docked` - Vacuum is at the dock
-* `charging` - Vacuum is charging
+* `charging` - Vacuum is charging and battery is lower than 80%, commands are disabled on UI. They will still work through the triggers/scripts.
 * `full` - Vacuum dust bag is full
 
 ### Supported commands

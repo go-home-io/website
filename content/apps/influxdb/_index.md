@@ -43,5 +43,4 @@ InfluxDB is a high-performance data store for time-series data. During provision
 || **memory.limits** | `512Mi` | Memory limit for the db | 
 | **inbound** |
 || **port** | `8080` | HTTP API port |
-|| **type** | `ClusterIP` | Type of exposed service. Defaults to cluster-only | 
-|| **clusterNS** | `cluster.local` | k8s default DNS name |
+|| **type** | `ClusterIP` | Type of exposed service. Defaults to cluster-only |

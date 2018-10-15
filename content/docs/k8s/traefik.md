@@ -21,6 +21,7 @@ You can find full list of supported DNS-providers [here](https://docs.traefik.io
 ssl:
   enabled: true
   tlsMinVersion: VersionTLS12
+  insecureSkipVerify: true
 acme: 
   enabled: true
   email: your_email

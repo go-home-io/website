@@ -23,6 +23,7 @@ introducedIn: 0.1
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **server** | yes | string || `nsqd` address |
+| **timeout** || int | `1` | NSQ dial timeout in seconds |
 
 ### Example 
 

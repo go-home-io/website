@@ -13,6 +13,8 @@ updateType: internalPush
 ---
 {{<device>}}
 
+{{<warning "Xiaomi Hub must be executed on a hostNetwork (static workers ih Helm chart).">}}
+
 Plugin provides control of Xiaomi hub. 
 
 {{<warning "Right now only one gateway is supported within the same sub-network.">}}

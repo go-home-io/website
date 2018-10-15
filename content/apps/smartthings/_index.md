@@ -3,7 +3,7 @@ title: SmartThings
 description: MQTT broker bridge
 date: 2018-07-31T11:56:00-07:00
 draft: false
-bref: System to share and control SmartThings device states in MQTT
+bref: System to share and control SmartThings device states over MQTT
 toc: false
 sidebar: false
 type: app
@@ -52,6 +52,7 @@ And use node's MAC address in your `MQTT Bridge` device.
 | **inbound** |
 || **port** | `8081` | Bridge port, exposed through service | 
 || **type** | `LoadBalancer` | Type of exposed service. Defaults to load balancer |
+|| **loadBalancerIP** || Static IP to use for the service. Might be useful since you need to lock this address in the Smart Things IDE |
 | **app** |
 || **mqtt.host** | `volantmq.default.svc.cluster.local:1883` | MQTT broker host | 
 || **mqtt.username** | `gohome` | MQTT broker username |

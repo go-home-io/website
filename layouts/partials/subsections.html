@@ -58,6 +58,15 @@
           </ul>
         </ol>
       </nav>
-      {{ partial "toc" .page }}
+      {{ partial "toc" .page }}    
+{{ end }}
+
+{{ if eq .page.Parent.Params.shared true }}
+    <h5>{{ .title}}' common info:</h5>
+    <div id="sharedcontent">
+        {{ .page.Parent.Content }}
     </div>
 {{ end }}
+
+
+</div>
