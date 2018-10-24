@@ -6,3 +6,7 @@ command = "hugo"
 HUGO_VERSION = "0.45"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+from = "/x/server/*"
+to = "/x/server/"
