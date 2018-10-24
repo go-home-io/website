@@ -8,5 +8,5 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-from = "/x/server/*"
-to = "/x/server/"
+  from = "/x/server/*"
+  to = "/x/server/"
