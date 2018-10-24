@@ -9,6 +9,6 @@ HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
 from = "https://go-home.io/x/providers/*"
-to = "https://go-home.io/x/providers"
+to = "https://go-home.io/go/providers"
 status = 301
 force = true
