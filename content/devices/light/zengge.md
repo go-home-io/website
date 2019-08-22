@@ -13,14 +13,15 @@ updateType: internalPull
 ---
 {{<device>}}
 
-Zengge, a.k.a. Flux, a.k.a. Magic Home are cheap WiFi-enabled devices or dongles produced by various Chinese manufacturers.
+Zengge, a.k.a. Flux, a.k.a. Magic Home are cheap WiFi-enabled devices or
+dongles produced by various Chinese manufacturers.
 
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **ip** | yes | ipv4 || IP address of the device | 
-| **pollingInterval** || int | `5` | Interval in seconds to wait between pulling updates from the device | 
+| **ip** | yes | ipv4 || IP address of the device |
+| **pollingInterval** || int | `5` | Interval in seconds to wait between pulling updates from the device |
 
 ### Supported properties
 
@@ -35,8 +36,8 @@ Zengge, a.k.a. Flux, a.k.a. Magic Home are cheap WiFi-enabled devices or dongles
 | --------|-------|-------------|
 | `on` || Turns the device on |
 | `off` || Turns the device off |
-| `toggle` || Toggles the device state | 
-| `set-color` | {r,g,b} | For colorful bulbs sets color | 
+| `toggle` || Toggles the device state |
+| `set-color` | {r,g,b} | For colorful bulbs sets color |
 
 ### Example
 

@@ -14,19 +14,23 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-`go-home` provides system-wide logger implementation and every plugin receives it during the initialization. 
+`go-home` provides system-wide logger implementation and every plugin receives
+it during the initialization.
 
-Besides actual log message, additional `key: value` pairs could be specified and they will be available in logger output. 
+Besides actual log message, additional `key: value` pairs could be specified
+and they will be available in logger output.
 
-If logger is not configured, default `console` logger is used, it doesn't have any configuration options and has `debug` level on.
+If logger is not configured, default `console` logger is used, it doesn't have
+any configuration options and has `debug` level on.
 
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **level** || string | `info` | Log level | 
+| **level** || string | `info` | Log level |
 
 #### Supported log levels
+
 * `debug`
 * `info`
 * `warn`, `warning`

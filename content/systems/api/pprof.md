@@ -14,6 +14,7 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Exposing [pprof](https://golang.org/pkg/net/http/pprof/) metrics for the master server. They are available on `/debug/pprof` URL. 
+Exposing [pprof](https://golang.org/pkg/net/http/pprof/) metrics for the master server.
+They are available on `/debug/pprof` URL.
 
 {{<image "pprof.png">}}

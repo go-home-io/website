@@ -14,7 +14,7 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-[zap](https://github.com/uber-go/zap) is an extremely fast structured logger by Uber.  
+[zap](https://github.com/uber-go/zap) is an extremely fast structured logger by Uber.
 
 ### Configuration options
 
@@ -22,14 +22,14 @@ introducedIn: 0.1
 |-------|----------|------|---------|-------------|
 | **targets** | yes | [target] || List of all targets |
 
-#### Target 
+#### Target
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **regular** | yes | [string]|| List of targets for regular messages | 
+| **regular** | yes | [string]|| List of targets for regular messages |
 | **error** | yes | [string]|| List of targets for error messages |
 
 #### Supported targets
+
 * `stdout`
 * `stderr`
-

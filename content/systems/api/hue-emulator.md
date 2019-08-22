@@ -14,13 +14,18 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
+<!-- markdownlint-disable line-length -->
 {{<warning "Hue emulator must be executed on a hostNetwork (static workers ih Helm chart).">}}
+<!-- markdownlint-enable line-length -->
 
-By emulating HUE hub, you can expose `go-home` devices to Alexa/Google Home, etc. 
+By emulating HUE hub, you can expose `go-home` devices to Alexa/Google Home, etc.
 
-API has to be running on a worker, which is located in the same sub-network, where target consumer is located.
+API has to be running on a worker, which is located in the same sub-network,
+where target consumer is located.
 
+<!-- markdownlint-disable line-length -->
 {{<warning "Emulator uses FNV-1a hash of device ID to advertise it. Changes in IP require re-discovery.">}}
+<!-- markdownlint-enable line-length -->
 
 {{<image "hue-devices.png">}}
 
@@ -30,8 +35,8 @@ API has to be running on a worker, which is located in the same sub-network, whe
 |-------|----------|------|---------|-------------|
 | **advAddress** | yes | ipv4:port || IP and port where hub should be available. You should use static IP:port otherwise re-discovery is required |
 | **nameOverrides** || dict || List of `key:value` pairs: internal_id:external_name |
-| **workerSelectors** | yes | dict || Worker [selectors]({{<relref "/docs/config/worker-selectors.md">}}) 
-| **devices** || [string] || [Glob]({{<relref "/docs/config/glob.md">}})-based device filters which should be exposed | 
+| **workerSelectors** | yes | dict || Worker [selectors]({{<relref "/docs/config/worker-selectors.md">}}) |
+| **devices** || [string] || [Glob]({{<relref "/docs/config/glob.md">}})-based device filters which should be exposed |
 | **types** || [string] | all supported | List of devices types to expose |
 
 ### Supported device types

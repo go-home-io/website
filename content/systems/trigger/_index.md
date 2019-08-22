@@ -14,7 +14,8 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Trigger system is responsible for reacting on state-changes events. As an outpur, triggers can change state of any device or start other actions.
+Trigger system is responsible for reacting on state-changes events. As an output,
+triggers can change state of any device or start other actions.
 
 ### Configuration options
 
@@ -26,7 +27,8 @@ Trigger system is responsible for reacting on state-changes events. As an outpur
 
 ### Trigger action
 
-Describes which actions should be taken if trigger is in `triggered` state. Actions will be executed one by one. 
+Describes which actions should be taken if trigger is in `triggered` state.
+Actions will be executed one by one.
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|

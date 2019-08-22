@@ -13,7 +13,9 @@ provider: group
 ---
 {{<provider>}}
 
-Groups are used for combining multiple devices into logical group. Besides that, group will pick properties and commands which are common for all devices belonging to the group.
+Groups are used for combining multiple devices into logical group.
+Besides that, group will pick properties and commands which are common for
+all devices belonging to the group.
 
 ### Configuration options
 
@@ -23,6 +25,7 @@ Groups are used for combining multiple devices into logical group. Besides that,
 | **devices** | yes | [string]|| List of [glob]({{<relref "/docs/config/glob.md">}})-based device IDs |
 
 ### Examples
+
 ```yaml
 system: device
 provider: group

@@ -14,7 +14,9 @@ logo: logo.png
 ---
 {{<app>}}
 
-If you've chosen to use shared RWX persistent storage for storing providers, this application might come in handy to avoid errors due to parallel access to same providers.
+If you've chosen to use shared RWX persistent storage for storing providers,
+this application might come in handy to avoid errors due to parallel access to
+same providers.
 
 ### Configuration options
 
@@ -27,12 +29,12 @@ If you've chosen to use shared RWX persistent storage for storing providers, thi
 | **docker** |
 || **image** | `gohomeio/bintray-proxy` | Docker image |
 || **tag** | `1.0.3` | Docker image version |
-|| **pullPolicy** | `IfNotPresent` | When to pull an image | 
-| **resources** | 
-|| **cpu.requests** | `100m` | CPU request for the proxy | 
-|| **cpu.limits** | `100m` | CPU limit for the proxy | 
-|| **memory.requests** | `50Mi` | Memory request for the proxy | 
-|| **memory.limits** | `100Mi` | Memory limit for the proxy | 
+|| **pullPolicy** | `IfNotPresent` | When to pull an image |
+| **resources** |
+|| **cpu.requests** | `100m` | CPU request for the proxy |
+|| **cpu.limits** | `100m` | CPU limit for the proxy |
+|| **memory.requests** | `50Mi` | Memory request for the proxy |
+|| **memory.limits** | `100Mi` | Memory limit for the proxy |
 | **inbound** |
 || **port** | `9090` | HTTP API port |
 || **type** | `ClusterIP` | Type of exposed service. Defaults to cluster-only |

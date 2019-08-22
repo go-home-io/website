@@ -10,13 +10,16 @@ type: doc
 logo:
 ---
 
-[Glob](https://en.wikipedia.org/wiki/Glob_(programming)) is a matching pattern, used in most OSes. In go-home glob matching is powered by [globwas/glob](https://github.com/gobwas/glob) library.
+[Glob](https://en.wikipedia.org/wiki/Glob_(programming)) is a matching pattern,
+used in most OSes. In go-home glob matching is powered by
+[globwas/glob](https://github.com/gobwas/glob) library.
 
-Most systems support wildcarding entities using glob patters. 
+Most systems support wildcarding entities using glob patters.
 
 {{<warning "Don't overdo wildard usage as it may result in unexpected behavior.">}}
 
 ### Syntax
+
 |Wildcard|Description|
 |--------|-----------|
 | `*` | Matches any number of any characters including none |
@@ -28,6 +31,7 @@ Most systems support wildcarding entities using glob patters.
 
 ### Examples
 
-- `hue.light.*` will select all light entities exposed by HUE hub. If both groups and lights are exposed, all of them will be selected. 
-- `hue.light.[!g]*` will select only lights, as groups will be filtered by `[!g]` exclusion.
-
+- `hue.light.*` will select all light entities exposed by HUE hub.
+If both groups and lights are exposed, all of them will be selected.
+- `hue.light.[!g]*` will select only lights, as groups will be filtered by
+`[!g]` exclusion.

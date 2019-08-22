@@ -16,4 +16,6 @@ introducedIn: 0.1
 
 ### Quick overview
 
-`go-home` uses service bus to avoid direct exposing of the workers to the internet. For simple usage [NSQ]({{<relref "/systems/bus/nsq.md">}}) is a great choice
+`go-home` uses service bus to avoid direct exposing of the workers to the internet.
+For a simple usage scenarios [NSQ]({{<relref "/systems/bus/nsq.md">}})
+is a great choice.

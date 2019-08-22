@@ -14,7 +14,8 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Storage system is a backend for saving devices state data. If storage is not configured no data would be presented on dashboard.
+Storage system is a backend for saving devices state data.
+If storage is not configured no data would be presented on dashboard.
 
 ### Configuration options
 
@@ -26,4 +27,4 @@ Storage system is a backend for saving devices state data. If storage is not con
 
 ### List of excluded device types
 
-* `camera` - Saving raw pictures might increase your DB size dramatically. 
+* `camera` - Saving raw pictures might increase your DB size dramatically.

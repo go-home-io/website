@@ -14,9 +14,10 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-[NSQ](https://nsq.io/) is a light-weight and blazing-fast pub/sub service bus, written in Go and it's perfect for simple in-house installation.
+[NSQ](https://nsq.io/) is a light-weight and blazing-fast pub/sub service bus,
+written in Go and it's perfect for simple in-house installation.
 
-{{<warning "Authentication is not supported as of now.">}} 
+{{<warning "Authentication is not supported as of now.">}}
 
 ### Configuration options
 
@@ -25,7 +26,7 @@ introducedIn: 0.1
 | **server** | yes | string || `nsqd` address |
 | **timeout** || int | `1` | NSQ dial timeout in seconds |
 
-### Example 
+### Example
 
 ```yaml
 system: bus

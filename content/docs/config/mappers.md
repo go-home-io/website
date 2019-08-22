@@ -10,43 +10,51 @@ type: doc
 logo:
 ---
 
-Sometimes it's necessary to do complex data translation or to have function-kind of logic. To allow such things, `go-home` provides mappers. Mappers are set of functions which could be applied for data-transformation.
+Sometimes it's necessary to do complex data translation or to have
+function-kind of logic. To allow such things, `go-home` provides mappers.
+Mappers are set of functions which could be applied for data-transformation.
 
-Mappers are using [govaluate](github.com/Knetic/govaluate) library. 
+Mappers are using [govaluate](github.com/Knetic/govaluate) library.
 
 ### Supported functions
 
 * `num` -- converts value to number (`float64` to be precise)
-* `str` -- converts value to string 
+* `str` -- converts value to string
 * `fmt` -- formats data using `fmt.Sprintf`
 * `jq` -- JSON operations
 
-#### jq 
+#### jq
 
-If `jq` is invoked with an object only, function returns un-marshaled `map[string]interface{}` data. 
+If `jq` is invoked with an object only, function returns un-marshaled
+`map[string]interface{}` data.
 
-If `jq` is invoked with object and expression, function tries to apply [jq](https://stedolan.github.io/jq/) syntax and execute it over the object. 
+If `jq` is invoked with object and expression, function tries to apply
+[jq](https://stedolan.github.io/jq/) syntax and execute it over the object.
 
-### Read 
+### Read
 
-Read mapper is passing received `payload` into mapper method and expects to receive single object.
+Read mapper is passing received `payload` into mapper method and expects to
+receive single object.
 
 For example, you can map received MQTT payload into device state.
 
 ### Write
 
-Write mapper is passing invoking object into mapper method nad expects to receive single object.
+Write mapper is passing invoking object into mapper method and expects
+to receive single object.
 
-For example, you can use device state to map it into desired MQTT command. 
+For example, you can use device state to map it into desired MQTT command.
 
 ### Examples
 
-The following expression will return true 
+The following expression will return true
+
 ```bash
 jq(payload, '.status.value') == 'true'
 ```
 
 with the following `payload`
+
 ```json
 {
   "status": {
@@ -55,19 +63,21 @@ with the following `payload`
 }
 ```
 
-The following expression will return `on`: 
+The following expression will return `on`:
+
 ```bash
 (state.On == true) ? 'on' : 'off'
 ```
 
 with the following device `state`:
+
 ```go
 LightState{
-	On: true,
+    On: true,
 }
-``` 
+```
 
-The following expression will return `r:10,g:20,b:30`: 
+The following expression will return `r:10,g:20,b:30`:
 
 ```bash
 fmt('r:%v,g:%v,b:%v', state.Color.R, state.Color.G, state.Color.B)

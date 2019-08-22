@@ -6,7 +6,9 @@ updateType:
 shared: true
 ---
 
-Cameras are sending an updated image only in case motion was detected. [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) algorithm is used to determine the difference between two images. 
+Cameras are sending an updated image only in case motion was detected.
+[Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance)
+algorithm is used to determine the difference between two images.
 
 Each camera has the following three optional configuration properties:
 
@@ -16,4 +18,5 @@ Each camera has the following three optional configuration properties:
 | **quality** | percent | `50` | JPEG quality |
 | **width** | int | `800` | Final picture's width (aspect ratio is preserved) |
 
-> By default pictures are not persisted through [Storage system]({{<relref "/systems/storage">}}), you need to enable them explicitly.
+> By default pictures are not persisted through
+[Storage system]({{<relref "/systems/storage">}}), you need to enable them explicitly.

@@ -1,0 +1,18 @@
+{
+    "no-inline-html": {
+        "allowed_elements":[
+            "app",
+            "device",
+            "image",
+            "provider",
+            "relref",
+            "warning",
+            "i"
+        ]
+    }, 
+    "line-length": {
+        "line_length": 80,
+        "code_blocks": false,
+        "tables": false
+    }
+}

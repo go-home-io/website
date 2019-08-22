@@ -13,11 +13,16 @@ updateType: internalPull
 ---
 {{<device>}}
 
-Plugin provides control of Xiaomi vacuum (gen 1 and 2). 
+Plugin provides control of Xiaomi vacuum (gen 1 and 2).
 
-> Vacuum tends to ignore about 20% status requests, so you might see update in UI with some delay. So far provider uses 1 second delay between sending the command and requesting an update. 
+> Vacuum tends to ignore about 20% status requests, so you might see update in
+the UI with some delay. So far provider uses 1 second delay between sending
+the command and requesting an update.
 
-To begin using this plugin you need to obtain a token from the device. There're multiple options available, unfortunately all of them are kinda complicated. Since the last few versions vacuum changes its token after paring with the app and no longer advertises it. Below are possible ways to get it. 
+To begin using this plugin you need to obtain a token from the device.
+There're multiple options available, unfortunately all of them are kinda
+complicated. Since the last few versions vacuum changes its token after
+paring with the app and no longer advertises it. Below are possible ways to get it.
 
 ### iOS app
 
@@ -27,7 +32,8 @@ To begin using this plugin you need to obtain a token from the device. There're 
 1. Go to `com.xiaomi.mihome`
 1. Extract file `123456789_mihome.sqlite`
 1. Install [SQLite Browser](http://sqlitebrowser.org) and load your file
-1. Run the following query `SELECT ZTOKEN FROM ZDEVICE WHERE ZMODEL LIKE "%vacuum%"` and copy 32-digit token
+1. Run the following query `SELECT ZTOKEN FROM ZDEVICE WHERE ZMODEL LIKE "%vacuum%"`
+and copy 32-digit token
 1. Run the following command in your terminal
 
 ```bash
@@ -35,28 +41,34 @@ echo '0: <YOUR HEXADECIMAL STRING>' | xxd -r -p | openssl enc -d -aes-128-ecb -n
 ```
 
 ### Android app
-
+<!-- markdownlint-disable line-length-->
 {{<warning "Latest app version is no longer storing token on the device and instead uses calls to Xiaomi Cloud.">}}
+<!-- markdownlint-enable line-length -->
 
 1. Downgrade your Mi-Home app to [5.0.0 version](https://www.apkmirror.com/apk/xiaomi-inc/mihome/mihome-5-0-0-release/)
-1. Enable developer mode and USB debugging on your phone 
+1. Enable developer mode and USB debugging on your phone
 1. Install [ADB tools](https://developer.android.com/studio/releases/platform-tools.html)
-1. Create a backup of the application `adb backup -noapk com.xiaomi.smarthome -f backup.ab`
+1. Create a backup of the application `adb backup -noapk com.xiaomi.smarthome -f
+backup.ab`
 1. Confirm backup on your phone **WITHOUT** password
 1. Install [ADB Backup Extractor](https://sourceforge.net/projects/adbextractor/)
-1. Extract everything from the backup `java(.exe) -jar abe.jar unpack backup.ab backup.tar`, extract `.tar` archive
+1. Extract everything from the backup `java(.exe) -jar abe.jar unpack
+backup.ab backup.tar`, extract `.tar` archive
 1. Install [SQLite Browser](http://sqlitebrowser.org) and load your file
 1. Run the following query `select token from devicerecord where name like "%Vacuum%"`
 
 ### Custom firmware
 
-This method requires installing DustCloud custom firmware to obtain the root. Refer to the [official documentation](https://github.com/dgiese/dustcloud/wiki/VacuumRobots-manual-update-root-Howto) for details. 
+This method requires installing DustCloud custom firmware to obtain the root.
+Please refer to the [official documentation](https://github.com/dgiese/dustcloud/wiki/VacuumRobots-manual-update-root-Howto)
+for the details.
 
 > It's much easier to install through flasher.py.
+> If you have the latest firmware installed on your vacuum, do the
+[factory reset](https://github.com/dgiese/dustcloud/wiki/Xiaomi-Vacuum-Robots-Factory-Reset)
+first.
 
-> If you have the latest firmware installed on your vacuum, do the [factory reset](https://github.com/dgiese/dustcloud/wiki/Xiaomi-Vacuum-Robots-Factory-Reset) first.
-
-After DustCloud is installed, ssh into the device and get your token: 
+After DustCloud is installed, ssh into the device and get your token:
 
 ```bash
 printf $(cat /mnt/data/miio/device.token) | xxd -p
@@ -73,10 +85,10 @@ printf $(cat /mnt/data/miio/device.token) | xxd -p
 
 | Property | Type | Description |
 |----------|------|-------------|
-| **vac_status** | status | Status of the vacuum | 
-| **battery_level** | percent | Current battery level | 
-| **fan_speed** | percent | Current fan speed | 
-| **area** | float | Last cleaned area (m2/ft2) | 
+| **vac_status** | status | Status of the vacuum |
+| **battery_level** | percent | Current battery level |
+| **fan_speed** | percent | Current fan speed |
+| **area** | float | Last cleaned area (m2/ft2) |
 | **duration** | float | Time of the last cleaning (in seconds) |
 
 #### Vacuum statuses
@@ -85,7 +97,8 @@ printf $(cat /mnt/data/miio/device.token) | xxd -p
 * `cleaning` - Vacuum is in a cleaning state
 * `paused` - Cleaning paused
 * `docked` - Vacuum is at the dock
-* `charging` - Vacuum is charging and battery is lower than 80%, commands are disabled on UI. They will still work through the triggers/scripts.
+* `charging` - Vacuum is charging and battery is lower than 80%, commands are
+disabled on UI. They will still work through the triggers/scripts.
 * `full` - Vacuum dust bag is full
 
 ### Supported commands
@@ -95,7 +108,7 @@ printf $(cat /mnt/data/miio/device.token) | xxd -p
 | `on` || Turns the device on |
 | `off` || Turns the device off |
 | `pause` || Pauses the device |
-| `dock` || Send vacuum to the dock station | 
+| `dock` || Send vacuum to the dock station |
 | `find-me` || Makes vacuum to play `Find Me` sound |
 | `set-fan-speed` | percent | Sets the fan speed |
 

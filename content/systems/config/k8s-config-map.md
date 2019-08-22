@@ -14,7 +14,9 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-k8s provider attempts to load configuration from config map. Config map can have any amount of records. Naming convention follows the same as [local FS]({{<relref "local-fs">}}) provider.
+k8s provider attempts to load configuration from config map.
+Config map can have any amount of records. Naming convention follows the same as
+a [local FS]({{<relref "local-fs">}}) provider.
 
 {{<warning "Binary data is not supported.">}}
 
@@ -24,9 +26,10 @@ k8s provider attempts to load configuration from config map. Config map can have
 |-------|----------|------|---------|-------------|
 | **config-map** || string | `default/go-home` | Specifies namespace and config map name to use |
 
-### Example 
+### Example
 
-The following example will load data from `go-home-server` config map in `default` namespace:
+The following example will load data from `go-home-server` config map in
+`default` namespace:
 
 ```bash
 ./go-home \
@@ -47,7 +50,7 @@ data:
     type: master
     port: 8000
     delayedStart: 0
-    
+
   hubs.yaml: |-
     system: device
     provider: hub/hue
@@ -56,7 +59,7 @@ data:
       name: worker-1
 ```
 
-Alternatively you can upload all files from a folder using the following command: 
+Alternatively you can upload all files from a folder using the following command:
 
 ```bash
 kubectl create configmap go-home-server --from-file=/path/to/your/configs/

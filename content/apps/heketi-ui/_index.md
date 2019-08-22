@@ -14,7 +14,8 @@ logo:
 ---
 {{<app>}}
 
-Heketi UI is a dashboard which provides all vital information about your glusterFS cluster. 
+Heketi UI is a dashboard which provides all vital information about your
+glusterFS cluster.
 
 {{<image "heketi_1.png">}}
 
@@ -27,17 +28,17 @@ Heketi UI is a dashboard which provides all vital information about your gluster
 || **namespace** | `default` | Namespace to install app into |
 || **heketi** |
 || **server** || Heketi server URL, the same which was used for the Storage Class |
-|| **username** | `admin` | Heketi username | 
-|| **password** | `My Secret` | Heketi password. Those details were provided during the Heketi setup in `/etc/heketi/heketi/heketi.json` file | 
+|| **username** | `admin` | Heketi username |
+|| **password** | `My Secret` | Heketi password. Those details were provided during the Heketi setup in `/etc/heketi/heketi/heketi.json` file |
 | **docker** |
 || **image** | `gohomeio/heketi-ui` | Docker image |
 || **tag** | `1.0.0` | Docker image version |
-|| **pullPolicy** | `IfNotPresent` | When to pull an image | 
-| **resources** | 
-|| **cpu.requests** | `100m` | CPU request for the dashboard | 
-|| **cpu.limits** | `200m` | CPU limit for the dashboard | 
-|| **memory.requests** | `50Mi` | Memory request for the dashboard | 
-|| **memory.limits** | `100Mi` | Memory limit for the dashboard | 
+|| **pullPolicy** | `IfNotPresent` | When to pull an image |
+| **resources** |
+|| **cpu.requests** | `100m` | CPU request for the dashboard |
+|| **cpu.limits** | `200m` | CPU limit for the dashboard |
+|| **memory.requests** | `50Mi` | Memory request for the dashboard |
+|| **memory.limits** | `100Mi` | Memory limit for the dashboard |
 | **inbound**|
 || **enabled** | `false` | Flag indicating whether ingress should be created |
 || **host** || Ingress host |
@@ -53,7 +54,7 @@ traefik.ingress.kubernetes.io/redirect-entry-point: https
 traefik.ingress.kubernetes.io/redirect-permanent: true
 ```
 
-For basic-auth secret you need to generate passwords file first: 
+For basic-auth secret you need to generate passwords file first:
 
 ```bash
 htpasswd -c ./auth <your_user>

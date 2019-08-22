@@ -14,18 +14,23 @@ logo: logo.png
 ---
 {{<app>}}
 
-SmartThings bridge allows you to control Samsung [SmartThings](https://www.smartthings.com) devices through the MQTT broker. Consider using [VolantMQ]({{<relref "/apps/volantmq">}}) as a broker. 
+SmartThings bridge allows you to control Samsung
+[SmartThings](https://www.smartthings.com) devices through the MQTT broker.
+Consider using [VolantMQ]({{<relref "/apps/volantmq">}}) as a broker.
 
 {{<warning "Bridge requires static MAC address.">}}
 
-Assuming that you're using MetalLB for the k8s load balancing, make sure that you're deploying Bridge to the same node. 
+Assuming that you're using MetalLB for the k8s load balancing, make sure that
+you're deploying Bridge to the same node.
 
-Get node names running: 
+Get node names running:
+
 ```bash
 kubectl get nodes
 ```
 
-Add label to the selected node, e.g.: 
+Add label to the selected node, e.g.:
+
 ```bash
 kubectl label nodes k8s-agent-3 static=true
 ```
@@ -41,20 +46,20 @@ And use node's MAC address in your `MQTT Bridge` device.
 || **namespace** | `default` | Namespace to install app into |
 || **nodeSelector** `static: true` | List of node labels to deploy to |
 | **docker** |
-|| **image** | `gohomeio/smartthings` | Image name | 
-|| **tag** | `1.0.0` | Image tag | 
+|| **image** | `gohomeio/smartthings` | Image name |
+|| **tag** | `1.1.0` | Image tag |
 || **pullPolicy** | `IfNotPresent` | When to pull an image |
-| **resources** | 
-|| **cpu.requests** | `100m` | CPU request for the bridge | 
-|| **cpu.limits** | `100m` | CPU limit for the bridge | 
-|| **memory.requests** | `40Mi` | Memory request for the bridge | 
-|| **memory.limits** | `60Mi` | Memory limit for the bridge | 
+| **resources** |
+|| **cpu.requests** | `100m` | CPU request for the bridge |
+|| **cpu.limits** | `100m` | CPU limit for the bridge |
+|| **memory.requests** | `40Mi` | Memory request for the bridge |
+|| **memory.limits** | `60Mi` | Memory limit for the bridge |
 | **inbound** |
-|| **port** | `8081` | Bridge port, exposed through service | 
+|| **port** | `8081` | Bridge port, exposed through service |
 || **type** | `LoadBalancer` | Type of exposed service. Defaults to load balancer |
 || **loadBalancerIP** || Static IP to use for the service. Might be useful since you need to lock this address in the Smart Things IDE |
 | **app** |
-|| **mqtt.host** | `volantmq.default.svc.cluster.local:1883` | MQTT broker host | 
+|| **mqtt.host** | `volantmq.default.svc.cluster.local:1883` | MQTT broker host |
 || **mqtt.username** | `gohome` | MQTT broker username |
 || **mqtt.password** | `password` | MQTT broker password |
 || **preface** | `smartthings` | MQTT topics preface |

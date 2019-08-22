@@ -13,21 +13,26 @@ updateType: internalPull
 ---
 {{<device>}}
 
-Plugin provides control of Philips HUE Hubs. 
+Plugin provides control of Philips HUE Hubs.
 
-This provider supports secret storage and will automatically persist token in format `<config name>-hub-<ip address>`. E.g. `hue-hub-192.168.0.29: token`. If your hub is not configured to use static IP, make sure you've added `token` into config.
+This provider supports secret storage and will automatically persist token in
+format `<config name>-hub-<ip address>`. E.g. `hue-hub-192.168.0.29: token`.
+If your hub is not configured to use static IP,
+make sure you've added `token` into config.
 
 For the loaded groups, associated scenes will be loaded as well.
 
-> If you're not providing a token make sure you've pressed button on the top of the hub prior to launching `go-home`. If button is not pressed, registration won't work.
+> If token is not provided, make sure you've pressed the button on the top of
+the hub prior to launching `go-home`. If button is not pressed,
+registration won't work.
 
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
 | **ip** || ipv4 || IP address of the bridge. If it's not provided plugin tries to discover it |
-| **token** || string || Access token for the device. If it's not provided, plugin tries to register a new user `go-home` | 
-| **loadResources** | yes | string | `lights` | Types of resource to load from hub | 
+| **token** || string || Access token for the device. If it's not provided, plugin tries to register a new user `go-home` |
+| **loadResources** | yes | string | `lights` | Types of resource to load from hub |
 | **pollingInterval** || int | `20` | Interval in seconds to wait between pulling updates from the hub. First generation hubs start to throw errors if this values is too low, therefore minimal value is `2` seconds |
 
 #### Supported resources
@@ -41,10 +46,10 @@ For the loaded groups, associated scenes will be loaded as well.
 | Property | Type | Description |
 |----------|------|-------------|
 | `on` | bool | Flag indicating whether device is on |
-| `brightness` | percent | Current brightness level | 
+| `brightness` | percent | Current brightness level |
 | `color` | {r,g,b} | Current color |
 | `transition_time` | float | For certain bulbs shows transition time to next state |
-| `scenes` | [string] | For groups only shows list of predefined scenes | 
+| `scenes` | [string] | For groups only shows list of predefined scenes |
 
 ### Supported commands
 
@@ -52,11 +57,11 @@ For the loaded groups, associated scenes will be loaded as well.
 | --------|-------|-------------|
 | `on` || Turns the device on |
 | `off` || Turns the device off |
-| `toggle` || Toggles the device state | 
+| `toggle` || Toggles the device state |
 | `set-brightness` | percent | Sets the device brightness |
-| `set-color` | {r,g,b} | For colorful bulbs sets color | 
+| `set-color` | {r,g,b} | For colorful bulbs sets color |
 | `set-transition-time` | float | For certain bulbs sets transition time |
-| `set-scene` | string | For groups only sets onf of the predefined scenes |
+| `set-scene` | string | For groups only, turns on one of the predefined scenes |
 
 ### Example
 

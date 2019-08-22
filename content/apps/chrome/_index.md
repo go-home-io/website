@@ -14,7 +14,8 @@ logo: logo.png
 ---
 {{<app>}}
 
-Chrome (well, technically Chromium) running with a headless mode enabled could be used for a [camera/web]({{<relref "/devices/camera/web.md">}}) rendering.
+Chrome (well, technically Chromium) running with a headless mode enabled could
+be used for a [camera/web]({{<relref "/devices/camera/web.md">}}) rendering.
 
 ### Configuration options
 
@@ -26,9 +27,9 @@ Chrome (well, technically Chromium) running with a headless mode enabled could b
 | **docker** |
 || **image** | `gohomeio/chrome` | Docker image |
 || **tag** | `1.0.0` | Docker image version |
-|| **pullPolicy** | `IfNotPresent` | When to pull an image | 
-| **resources** | 
-|| **cpu.requests** | `100m` | CPU request for the browser | 
-|| **cpu.limits** | `600m` | CPU limit for the browser | 
-|| **memory.requests** | `100Mi` | Memory request for the browser | 
-|| **memory.limits** | `500Mi` | Memory limit for the browser | 
+|| **pullPolicy** | `IfNotPresent` | When to pull an image |
+| **resources** |
+|| **cpu.requests** | `100m` | CPU request for the browser |
+|| **cpu.limits** | `600m` | CPU limit for the browser |
+|| **memory.requests** | `100Mi` | Memory request for the browser |
+|| **memory.limits** | `500Mi` | Memory limit for the browser |

@@ -14,9 +14,13 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Config system is one of those systems which have to be configured through command line only, since actual configuration parsing starts only after Config system fished initialization. Flag name is `-c` or `--config`.
+Config system is one of those systems which have to be configured through
+the command line only, since actual configuration parsing starts only after
+Config system fished initialization. Flag name is `-c` or `--config`.
 
-> Some other systems (e.g. [Secret]({{<relref "/systems/secret">}})) might use default configs location to store their data. None of them will interfere with your configuration.
+> Some other systems (e.g. [Secret]({{<relref "/systems/secret">}})) might use
+default configs location to store their data. None of them will interfere
+with your configuration.
 
 ### Configuration options
 
@@ -26,7 +30,8 @@ Config system is one of those systems which have to be configured through comman
 
 Other params may vary depends on a selected provider.
 
-> If no options are specified, system defaults to [local file storage]({{<relref "/systems/config/local-fs.md">}}) provider.
+> If no options are specified, system defaults to
+local file storage]({{<relref "/systems/config/local-fs.md">}}) provider.
 
 ### Example
 

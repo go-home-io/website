@@ -10,7 +10,8 @@ type: doc
 logo: k8s.png
 ---
 
-> This guide is based on an awesome [gist](https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975) from **alexellis**.
+> This guide is based on an awesome
+[gist](https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975) from **alexellis**.
 
 SSH to all nodes and update packages:
 
@@ -18,12 +19,13 @@ SSH to all nodes and update packages:
 sudo apt-get install && sudo apt-get upgrade
 ```
 
-Install latest docker: 
+Install latest docker:
+
 ```bash
 curl -sSL get.docker.com | sh && sudo usermod pi -aG docker
 ```
 
-Disable all swap: 
+Disable all swap:
 
 ```bash
 sudo dphys-swapfile swapoff && \
@@ -48,23 +50,28 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
   sudo apt-get install -qy kubeadm
 ```
 
-Start `kubeadm` on **master** node, wait for about 15 minutes and copy your join token which will be an output of the operation:
+Start `kubeadm` on **master** node, wait for about 15 minutes and copy your join
+token which will be an output of the operation:
 
 ```bash
 sudo kubeadm init --token-ttl=0 --apiserver-advertise-address=192.168.0.100 --pod-network-cidr=10.244.0.0/16
 ```
 
+<!-- markdownlint-disable line-length -->
 {{<warning "Token's ttl 0 is fine for test purposes only, in general you don't want to have infinite tokens.">}}
+<!-- markdownlint-enable line-length -->
 
-Copy content of `$HOME/.kube/config` to your host machine, you'll need it to access the cluster. 
+Copy content of `$HOME/.kube/config` to your host machine, you'll need it to
+access the cluster.
 
-Now run on every **worker** node: 
+Now run on every **worker** node:
 
 ```bash
 sudo kubeadm join 192.168.0.100:6443 --token TOKEN --discovery-token-ca-cert-hash sha256:HASH
 ```
 
-Wait till process finishes and check if everything is fine. You should see something similar: 
+Wait till process finishes and check if everything is fine. You should see
+something similar:
 
 ```bash
 kubectl get node
@@ -75,10 +82,12 @@ k8s-agent-3    Ready     <none>    2m        v1.11.1
 k8s-master-1   Ready     master    1h        v1.11.1
 ```
 
-Last thing is to deploy [helm](https://helm.sh) which is a great package manager and used for all go-home applications.
-First create a new service account and role binding to allow helm control your cluster. 
+Last thing is to deploy [helm](https://helm.sh) which is a great package manager
+and is used for all go-home applications.
+First create a new service account and role binding to allow helm control your cluster.
 
-> Please refer to [official](https://github.com/helm/helm/blob/master/docs/rbac.md) documentation for other use-cases.
+> Please refer to [official](https://github.com/helm/helm/blob/master/docs/rbac.md)
+documentation for other use-cases.
 
 ```yaml
 apiVersion: v1
@@ -102,9 +111,9 @@ subjects:
 ```
 
 Then deploy arm-compatible tiller:
- 
+
 ```bash
-helm init --tiller-image=jessestuart/tiller:v2.9.1 --service-account=tiller
+helm init --tiller-image=jessestuart/tiller:v2.14.3 --service-account=tiller
 ```
 
 After a few minutes you should see `tiller` pod running in `kube-system` namespace.

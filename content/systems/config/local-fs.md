@@ -14,9 +14,10 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Default config provider which loads `yaml` files from local file storage. 
+Default config provider which loads `yaml` files from local file storage.
 
-Provider iterates over all nested folder and looking for files with `.yaml` extension. If name of a file starts from `_`, it's ignored. 
+Provider iterates over all nested folder and looking for files with `.yaml` extension.
+If a name of a file starts from `_`, it's ignored.
 
 ### Configuration options
 

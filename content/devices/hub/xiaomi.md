@@ -13,22 +13,28 @@ updateType: internalPush
 ---
 {{<device>}}
 
-{{<warning "Xiaomi Hub must be executed on a hostNetwork (static workers ih Helm chart).">}}
+{{<warning
+"Xiaomi Hub must be executed on a hostNetwork (static workers ih the Helm chart).">}}
 
-Plugin provides control of Xiaomi hub. 
+Plugin provides control of Xiaomi hub.
 
 {{<warning "Right now only one gateway is supported within the same sub-network.">}}
 
-It utilizes developers' API and requires certain configuration through the mobile app first:
+It utilizes developers' API and requires certain configuration through
+the mobile app first:
 
 {{<image "xiaomi_1.jpeg">}}
-Open the app, select your hub and click on its options (three dots in the upper right corner)
+Open the app, select your hub and click on its options (three dots at
+the upper right corner)
 
 {{<image "xiaomi_2.jpeg">}}
-Tab repeatedly on the empty space under the *Gameplay tutorial* menu option. Three more options will pop up. 
+Tab repeatedly on the empty space under the *Gameplay tutorial* menu option.
+Three more options will pop up.
 
 {{<image "xiaomi_3.jpeg">}}
-Select **second** new option, enable switch option and press OK to save changes -- this will enable development API. Note your gateway password *09F859F7B23A46BE* in the screenshot.
+Select **second** new option, enable switch option and press OK
+to save changes -- this will enable development API. Note your gateway
+password *09F859F7B23A46BE* in the screenshot.
 
 ### Configuration options
 
@@ -44,7 +50,7 @@ Select **second** new option, enable switch option and press OK to save changes 
 * Temperature/humidity sensors
 * Motion sensors
 * Magnets
-* Switches 
+* Switches
 
 ### Supported properties
 
@@ -53,18 +59,18 @@ Select **second** new option, enable switch option and press OK to save changes 
 | Property | Type | Description |
 |----------|------|-------------|
 | `on` | bool | Flag indicating whether device is on |
-| `brightness` | percent | Current brightness level | 
+| `brightness` | percent | Current brightness level |
 | `color` | {r,g,b} | Current color |
 
 #### Temperature/humidity sensor
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `temperature` | float | Current temperature | 
+| `temperature` | float | Current temperature |
 | `humidity` | float | Current humidity |
 | `battery_level` | percent | Current battery level |
 
-#### Motion sensor 
+#### Motion sensor
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -89,18 +95,19 @@ Select **second** new option, enable switch option and press OK to save changes 
 | `press` | bool | Flag indicating whether long press is detected |
 | `battery_level` | percent | Current battery level |
 
-
 ### Supported commands
 
+<!-- markdownlint-disable no-duplicate-heading -->
 #### Gateway LED
+<!-- markdownlint-enable no-duplicate-heading -->
 
 | Command | Input | Description |
 | --------|-------|-------------|
 | `on` || Turns the device on |
 | `off` || Turns the device off |
-| `toggle` || Toggles the device state | 
+| `toggle` || Toggles the device state |
 | `set-brightness` | percent | Sets the device brightness |
-| `set-color` | {r,g,b} | For colorful bulbs sets color | 
+| `set-color` | {r,g,b} | For colorful bulbs sets color |
 
 ### Example
 

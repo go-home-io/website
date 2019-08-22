@@ -13,13 +13,15 @@ updateType: pubSub
 ---
 {{<device>}}
 
-MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho](https://github.com/eclipse/paho.mqtt.golang) client therefore supports all major MQTT versions.  
+MQTT is a very popular messaging protocol for IoT devices. `go-home` uses
+[Paho](https://github.com/eclipse/paho.mqtt.golang) client therefore
+supports all major MQTT versions.
 
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **broker** | yes | string || MQTT broker address **without** `mqtt://` prefix | 
+| **broker** | yes | string || MQTT broker address **without** `mqtt://` prefix |
 | **clientID** || string | `gohome` | Clint ID to use. If you have configured acl's in you broker, make sure you're using correct `clientID` |
 | **login** || string || Login to use for broker connection |
 | **password** || string || Password to use for broker connection |
@@ -32,19 +34,19 @@ MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho]
 |-------|----------|------|---------|-------------|
 | **type** | yes | string || Device type |
 | **sensorType** ||string || If device is a sensor, you can specify its type |
-| **name** | yes | string || Device name | 
+| **name** | yes | string || Device name |
 | **qos** || int | `2` | [Quality of service](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/qos.html) |
-| **retained** || bool | `false` | Flag indicating whether commands messages for this device should be posted as retained | 
-| **pessimistic** || bool | `false` | Flag indicating whether device should use pessimistic mode. In this mode, after using any command, device is not waiting for the update message from the broker and sets it's internal state automatically to whatever was received from a command | 
+| **retained** || bool | `false` | Flag indicating whether commands messages for this device should be posted as retained |
+| **pessimistic** || bool | `false` | Flag indicating whether device should use pessimistic mode. In this mode, after using any command, device is not waiting for the update message from the broker and sets it's internal state automatically to whatever was received from a command |
 | **units** || string | `imperial` | Metric or imperial system to use for this device (if required for the device) |
 | **properties** || [property]|| List of mapped properties |
 | **commands** || [command]|| List of mapped commands |
 
-#### Property 
+#### Property
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **topic** | yes | string || Topic name | 
+| **topic** | yes | string || Topic name |
 | **property** | yes | string || Property name |
 | **mapper** | yes | string || Property read [mapper]({{<relref "/docs/config/mappers.md">}}) |
 
@@ -52,13 +54,13 @@ MQTT is a very popular messaging protocol for IoT devices. `go-home` uses [Paho]
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **topic** | yes | string || Topic name | 
+| **topic** | yes | string || Topic name |
 | **command** | yes | string || Command name |
 | **mapper** | yes | string || Command write [mapper]({{<relref "/docs/config/mappers.md">}}) |
 
 ### Supported devices
 
-* `sensor` 
+* `sensor`
 * `switch`
 
 ### Supported properties
@@ -69,9 +71,9 @@ Depends on a device
 
 Depends on a device
 
-### Example 
+### Example
 
-The following example shows how to integrate with a SmartThings bridge: 
+The following example shows how to integrate with a SmartThings bridge:
 
 ```yaml
 system: device

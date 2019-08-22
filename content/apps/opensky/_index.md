@@ -20,7 +20,9 @@ This application will collect parsed air traffic data and send it to OpenSky.
 
 ### Prepare cluster
 
-Before installing this app you need to select k8s worker which will have ADS-B USB Receiver connected. In particular you need to disable a few kernel drivers. SSH into the worker and run the following command: 
+Before installing this app you need to select k8s worker which will have ADS-B
+USB Receiver connected. In particular you need to disable a few kernel drivers.
+SSH into the worker and run the following command:
 
 ```bash
 sudo rmmod dvb_usb_rtl28xxu rtl2832 rtl2830
@@ -34,7 +36,7 @@ rmmod: ERROR: Module rtl2832 is not currently loaded
 rmmod: ERROR: Module rtl2830 is not currently loaded
 ```
 
-Otherwise add a blacklist to prevent them from loading after reboot: 
+Otherwise add a blacklist to prevent them from loading after reboot:
 
 ```bash
 echo 'blacklist dvb_usb_rtl28xxu blacklist rtl2832 blacklist rtl2830' > /etc/modprobe.d/block.conf
@@ -57,12 +59,12 @@ echo 'blacklist dvb_usb_rtl28xxu blacklist rtl2832 blacklist rtl2830' > /etc/mod
 | **docker** |
 || **image** | `gohomeio/opensky` | Docker image |
 || **tag** | `1.0.0` | Docker image version |
-|| **pullPolicy** | `IfNotPresent` | When to pull an image | 
-| **resources** | 
-|| **cpu.requests** | `200m` | CPU request for the feeder | 
-|| **cpu.limits** | `400m` | CPU limit for the feeder | 
-|| **memory.requests** | `100Mi` | Memory request for the feeder | 
-|| **memory.limits** | `200Mi` | Memory limit for the feeder | 
+|| **pullPolicy** | `IfNotPresent` | When to pull an image |
+| **resources** |
+|| **cpu.requests** | `200m` | CPU request for the feeder |
+|| **cpu.limits** | `400m` | CPU limit for the feeder |
+|| **memory.requests** | `100Mi` | Memory request for the feeder |
+|| **memory.limits** | `200Mi` | Memory limit for the feeder |
 | **inbound**|
 || **enabled** | `false` | Flag indicating whether ingress should be created |
 || **host** || Ingress host |
@@ -78,7 +80,7 @@ traefik.ingress.kubernetes.io/redirect-entry-point: https
 traefik.ingress.kubernetes.io/redirect-permanent: true
 ```
 
-For basic-auth secret you need to generate passwords file first: 
+For basic-auth secret you need to generate passwords file first:
 
 ```bash
 htpasswd -c ./auth <your_user>

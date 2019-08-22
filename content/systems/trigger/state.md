@@ -14,7 +14,8 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-State trigger watches devices updates and reacts if actual state matches state defined in the config.  
+State trigger watches devices updates and reacts if actual state
+matches state defined in the config.
 
 ### Configuration options
 
@@ -34,52 +35,54 @@ State trigger watches devices updates and reacts if actual state matches state d
 | **state** | either state or mapper ||| Property desired state |
 | **mapper** |either state or mapper| string|| Property [mapper]({{<relref "/docs/config/mappers.md">}}), must return bool |
 
-### Example 
+### Example
 
-The following example demonstrates two triggers reacting on motion sensor and turning on lights at 80% brightness for 60 seconds:
+The following example demonstrates two triggers reacting on motion sensor and
+turning on lights at 80% brightness for 60 seconds:
 
 ```yaml
 system: trigger
 provider: state
-name: hallway lights on 
-logic: and 
-devices: 
+name: hallway lights on
+logic: and
+devices:
   - device: mqtt.sensor.hallway
-  	property: "on"
-  	state: true
+    property: "on"
+    state: true
   - device: hue.light.group_hallway
-  	property: "on"
-  	state: false
-actions: 
+    property: "on"
+    state: false
+actions:
   - system: device
-  	entity: hue.light.group_hallway
-  	command: "on"
-  - system: device 
-  	entity: hue.light.group_hallway
-  	command: set-brightness
-  	args: 80
+    entity: hue.light.group_hallway
+    command: "on"
+  - system: device
+    entity: hue.light.group_hallway
+    command: set-brightness
+    args: 80
 
 ---
 
 system: trigger
 provider: state
-name: hallway lights off 
-logic: and 
-delay: 60 
-devices: 
+name: hallway lights off
+logic: and
+delay: 60
+devices:
   - device: mqtt.sensor.hallway
-  	property: "on"
-  	state: false
+    property: "on"
+    state: false
   - device: hue.light.group_hallway
-  	property: "on"
-  	state: true
-actions: 
+    property: "on"
+    state: true
+actions:
   - system: device
-  	entity: hue.light.group_hallway
-  	command: "off"
+    entity: hue.light.group_hallway
+    command: "off"
 ```
 
-The following example will turn off lights if no motions was detected after the last camera update: 
+The following example will turn off lights if no motions was detected
+after the last camera update:
 
 ```yaml
 system: trigger

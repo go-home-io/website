@@ -10,11 +10,17 @@ sidebar: true
 type: doc
 logo:
 ---
-`go-home` defines six different types of interaction with devices: 
+`go-home` defines six different types of interaction with devices:
 
-* <i class="upd_internalPull"></i> -- `internal pull`: workers are interacting with devices without internet access by pulling data
-* <i class="upd_externalPull"></i> -- `external pull`: workers are interacting with devices through the internet by pulling data
-* <i class="upd_pull"></i> -- `pull`: interaction depends on a source type - either internal or external
-* <i class="upd_internalPush"></i> -- `internal push`: workers are only pushing data to devices without internet access
-* <i class="upd_externalPush"></i> -- `external push`: workers are only pushing data to devices through the internet
-* <i class="upd_pubSub"></i> -- `pub/sub`: workers are communicating with devices through pub/sub, e.g. MQTT. Internet access might be required depends on your setup
+* <i class="upd_internalPull"></i> -- `internal pull`: workers are interacting
+with devices without internet access by pulling data
+* <i class="upd_externalPull"></i> -- `external pull`: workers are interacting
+with devices through the internet by pulling data
+* <i class="upd_pull"></i> -- `pull`: interaction depends on a source type --
+either internal or external
+* <i class="upd_internalPush"></i> -- `internal push`: workers are only pushing
+data to devices without internet access
+* <i class="upd_externalPush"></i> -- `external push`: workers are only pushing
+data to devices through the internet
+* <i class="upd_pubSub"></i> -- `pub/sub`: workers are communicating with devices
+through pub/sub, e.g. MQTT. Internet access might be required depends on your setup

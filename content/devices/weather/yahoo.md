@@ -15,11 +15,24 @@ updateType: externalPull
 
 This plugin allows to query a current weather from [Yahoo](https://www.yahoo.com/news/weather).
 
+Before using this plugin you need to register a new Yahoo app and request weather
+API to be whitelisted.
+
+Since it's not a web app, you don't need to configure redirect URL.
+After app registration you should have something similar to this:
+
+{{<image "yahoo-app.png">}}
+
+For detailed instructions please refer to the official [documentation](https://developer.yahoo.com/weather/).
+
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **location** | yes | string || Location in format `city, state, country`. Check [YQL](https://developer.yahoo.com/weather/) for more details |  
+| **location** | yes | string || Location in format `city, state, country`. Check [YQL](https://developer.yahoo.com/weather/) for more details |
+| **appId** | yes | string || Yahoo Application ID |
+| **clientId** | yes | string || Yahoo Application's client ID|
+| **clientSecret** | yes | string || Yahoo Application's client secret |
 | **pollingInterval** || int | `10` | Interval in minutes between the updates |
 | **properties** || [string] || List of properties to query |
 
@@ -35,6 +48,7 @@ This plugin allows to query a current weather from [Yahoo](https://www.yahoo.com
 | `wind_speed` | float | Current wind speed |
 | `sunrise` | string | Time of sunrise |
 | `sunset` | string | Time of sunset |
+| `description` | string | Text representation of the current condition |
 
 ### Supported commands
 
@@ -45,8 +59,12 @@ None
 ```yaml
 system: device
 provider: weather/yahoo
-name: el cerrito
-location: el cerrito, ca, us
+name: oakland
+location: Oakland, CA, US
+appId: your-app-id
+clientId: your-client-id
+clientSecret: your-client-secret
 properties:
   - temperature
+  - description
 ```

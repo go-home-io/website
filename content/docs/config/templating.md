@@ -10,11 +10,12 @@ type: doc
 logo:
 ---
 
-`go-home` uses golang [templates](https://golang.org/pkg/text/template/) to pre-process config files. 
+`go-home` uses golang [templates](https://golang.org/pkg/text/template/)
+to do the pre-processing of config files.
 
-Even though full-blown templating is not required, it's still possible. 
+Even though full-blown templating is not required, it's still possible.
 
-In addition, `go-home` provides a few pre-build functions. 
+In addition, `go-home` provides a few pre-build functions.
 
 ### Environment variables
 
@@ -35,5 +36,5 @@ server: {{ env "NSQD_HOST" }}
 system: device
 provider: hub/hue
 name: hue
-token: {{ sec "hue-hub-token" }} 
+token: {{ sec "hue-hub-token" }}
 ```

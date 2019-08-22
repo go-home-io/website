@@ -10,11 +10,12 @@ type: doc
 logo: rpi.png
 ---
 
-[Download](https://www.raspberrypi.org/downloads/raspbian/) Raspbian Lite and flash it to SD card and all USBs. 
+[Download](https://www.raspberrypi.org/downloads/raspbian/) Raspbian Lite and
+flash it to an SD card and all USBs.
 
-> Default user is `pi`, password is `raspberry`. 
+> Default user is `pi`, password is `raspberry`.
 
-On a first RPI boot from SD card and upgrade all: 
+On a first RPI boot from SD card and upgrade all:
 
 ```bash
 sudo apt-get install && sudo apt-get upgrade
@@ -28,35 +29,37 @@ program_usb_boot_mode=1
 
 {{<warning "Don't create any new lines.">}}
 
-Reboot device and validate that USB boot is enabled: 
+Reboot device and validate that USB boot is enabled:
 
 ```bash
 $ vcgencmd otp_dump | grep 17
 17:3020000a
 ```
 
-Boot from this SD card all others RPis. At this point you can start booting from USB sticks. 
+Boot from this SD card all others RPis.
+At this point you can start booting from a USB sticks.
 
-On every node you need to setup static IP in `/etc/dhcpcd.conf` (use your network): 
+On every node you need to setup static IP in `/etc/dhcpcd.conf` (use your network):
 
 ```bash
 profile static_wlan0
 static ip_address=192.168.0.101/24
 static routers=192.168.0.1
 static domain_name_servers=8.8.8.8
-``` 
+```
 
 > You may choose to setup static IPs through your router.
 
-Then setup through `raspi-config`: 
+Then setup through `raspi-config`:
 
 * WiFi connection
-* Host name, e.g. `k8s-master-1`, `k8s-worker-1`, `k8s-worker-2`, etc. 
-* Change pi password 
+* Host name, e.g. `k8s-master-1`, `k8s-worker-1`, `k8s-worker-2`, etc.
+* Change pi password
 * Enable `sshd` server
 
- Last but not least is to enable `ntp` which will sync clocks between your workers. This is extremely important since server will drop too old messages. 
- 
+ Last but not least is to enable `ntp` which will sync clocks between your workers.
+ This is extremely important since server will drop too old messages.
+
  > `ntp` is disabled by default in the latest system versions.
 
  ```bash
@@ -64,3 +67,6 @@ Then setup through `raspi-config`:
  sudo systemctl enable ntp
  sudo timedatectl set-ntp 1
  ```
+
+ To adjust your timezone run `raspi-config` and go to
+ `Localization Options` -> `Change Timezone`.

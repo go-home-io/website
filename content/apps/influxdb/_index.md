@@ -25,22 +25,22 @@ InfluxDB is a high-performance data store for time-series data. During provision
 || **nameOverride** || Use this to override name of the chart |
 | **general** |
 || **namespace** | `default` | Namespace to install app into |
-|| **storageSize** | `2Gi` | Size of the storage | 
+|| **storageSize** | `2Gi` | Size of the storage |
 | **db** |
 || **name** | `gohome` | Database name to create |
 | **user** |
-|| **login** || Regular user login | 
+|| **login** || Regular user login |
 || **password** || Regular user password |
 | **docker** |
-|| **isArm** | `true` | Flag indicating whether this is an ARM cluster | 
-|| **imageAmd** | `influxdb:1.6.1-alpine` | AMD docker image | 
-|| **imageArm** | `arm32v7/influxdb:1.6.1` | ARM docker image |
-|| **pullPolicy** | `IfNotPresent` | When to pull an image | 
-| **resources** | 
-|| **cpu.requests** | `200m` | CPU request for the db | 
-|| **cpu.limits** | `400m` | CPU limit for the db | 
-|| **memory.requests** | `256Mi` | Memory request for the db | 
-|| **memory.limits** | `512Mi` | Memory limit for the db | 
+|| **isArm** | `true` | Flag indicating whether this is an ARM cluster |
+|| **imageAmd** | `influxdb:1.7.7-alpine` | AMD docker image |
+|| **imageArm** | `arm32v7/influxdb:1.7.7-alpine` | ARM docker image |
+|| **pullPolicy** | `IfNotPresent` | When to pull an image |
+| **resources** |
+|| **cpu.requests** | `200m` | CPU request for the db |
+|| **cpu.limits** | `400m` | CPU limit for the db |
+|| **memory.requests** | `256Mi` | Memory request for the db |
+|| **memory.limits** | `512Mi` | Memory limit for the db |
 | **inbound** |
 || **port** | `8080` | HTTP API port |
 || **type** | `ClusterIP` | Type of exposed service. Defaults to cluster-only |

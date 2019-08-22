@@ -10,7 +10,9 @@ type: doc
 logo: helm.png
 ---
 
-`go-home` uses [Helm](https://helm.sh) package manager to deploy accompanying apps into k8s cluster. All apps are published into Helm repository located at [GitHub Pages](https://pages.github.com). Charts repo is available [here](https://github.com/go-home-io/helm).
+`go-home` uses [Helm](https://helm.sh) package manager to deploy accompanying
+apps into k8s cluster. All apps are published into Helm repository located at
+[GitHub Pages](https://pages.github.com). Charts repo is available [here](https://github.com/go-home-io/helm).
 
 To start using pre-built apps simply run:
 
@@ -18,17 +20,18 @@ To start using pre-built apps simply run:
 helm repo add go-home https://apps.go-home.io
 ```
 
-> Refer to official [documentation](https://docs.helm.sh/using_helm/#installing-helm) for helm installation details.
+> Refer to official [documentation](https://docs.helm.sh/using_helm/#installing-helm)
+for helm installation details.
 
-
-To install any app, you can override default params by passing custom `my_values.yaml` file:  
+To install any app, you can override default params by passing
+custom `my_values.yaml`file:  
 
 ```yaml
 auth:
   gohome: pass1
   smartthings: pass2
 
-docker: 
+docker:
   pullPolicy: Always
 ```
 

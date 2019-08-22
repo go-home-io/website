@@ -18,9 +18,10 @@ introducedIn: 0.1
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **port** || port | `8080` | Port where `go-home` master is exposed | 
+| **port** || port | `8080` | Port where `go-home` master is exposed |
 | **delayedStart** || int | `0` | Delay in seconds which allows master to wait before all workers will come online. This helps to prevent unnecessary devices-reloads upon system start |
-| **units** || string | `imperial` | Metric or imperial system to use for the system |
+| **units** || string | `imperial` | `metric` or `imperial` system to use for devices |
+| **timezone** || string | `Local` | [IANA Time Zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) name to use. If you run a k8s cluster it's better to have it configured, otherwise it defaults to `UTC` |
 
 ### Example
 
@@ -28,4 +29,5 @@ introducedIn: 0.1
 system: go-home
 provider: master
 port: 8000
+timezone: America/Los_Angeles
 ```

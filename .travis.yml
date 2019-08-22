@@ -1,0 +1,15 @@
+language: node_js
+node_js: 
+  - "8.12.0"
+git:
+  depth: 3
+jobs:
+  include: 
+    - stage: ci
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get install -y make
+      install: true
+      script: 
+        - make install-linter 
+        - make lint

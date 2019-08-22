@@ -20,8 +20,8 @@ InfluxDB backend.
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **address** | yes | string || InfluxDB server address | 
-| **username** | yes | string || Username for InfluxDB connection | 
-| **password** | yes | string || Password for InfluxDB connection | 
+| **address** | yes | string || InfluxDB server address |
+| **username** | yes | string || Username for InfluxDB connection |
+| **password** | yes | string || Password for InfluxDB connection |
 | **database** | yes | string || Database to use |
-| **batchSize** || int | `10` | Number of records to store in-memory before performing a transaction | 
+| **batchSize** || int | `10` | Number of records to store in-memory before performing a transaction |

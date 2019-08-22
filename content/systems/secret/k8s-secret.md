@@ -14,7 +14,8 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-k8s provider attempts to load secrets from k8s-cluster secrets. Secret should have `key:value` map. 
+k8s provider attempts to load secrets from k8s-cluster secrets.
+Secret should have `key:value` map.
 
 ### Configuration options
 
@@ -31,6 +32,7 @@ The following example will use `go-home-server` secret in `default` namespace:
 ```
 
 You can create secrets like this:
+
 ```bash
 kubectl create secret generic go-home-server --from-literal=test-secret="example data"
 ```

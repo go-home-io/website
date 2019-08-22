@@ -16,9 +16,9 @@ introducedIn: 0.1
 
 Default secrets provider which loads secrets from local `yaml` file.
 
-By default provider uses `_secrets.yaml` file in config directory. 
+By default provider uses `_secrets.yaml` file in config directory.
 
-File is a simple `key:value` `yaml` file, e.g.: 
+File is a simple `key:value` `yaml` file, e.g.:
 
 ```yaml
 hue-hub-192.168.0.29: long_token_here

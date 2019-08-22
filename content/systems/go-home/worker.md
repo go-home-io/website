@@ -18,9 +18,9 @@ introducedIn: 0.1
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **name** | yes | string || Worker name | 
+| **name** | yes | string || Worker name |
 | **properties** || dict || List of `key:value` pairs to [label]({{<relref "/docs/config/worker-selectors.md">}}) this worker |
-| **maxDevices** || int | `99` | Maximum amount of devices this worker can handle | 
+| **maxDevices** || int | `99` | Maximum amount of devices this worker can handle |
 
 ### Example
 

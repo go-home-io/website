@@ -14,7 +14,9 @@ introducedIn: 0.1
 ---
 {{<provider>}}
 
-Secrets system is one of those systems which have to be configured through command line only, since actual configuration parsing starts only after Secrets system fished initialization. Flag name is `-s` or `--secret`. 
+Secrets system is one of those systems which have to be configured through
+the command line only, since actual configuration parsing starts only after
+the Secrets system fished initialization. Flag name is `-s` or `--secret`.
 
 ### Configuration options
 
@@ -24,7 +26,8 @@ Secrets system is one of those systems which have to be configured through comma
 
 Other params may vary depends on a selected provider.
 
-> If no options are specified, system defaults to [local file storage]({{<relref "/systems/secret/local-fs.md">}}) provider.
+> If no options are specified, system defaults to
+a [local file storage]({{<relref "/systems/secret/local-fs.md">}}) provider.
 
 ### Example
 

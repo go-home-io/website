@@ -8,4 +8,6 @@ bref: go-home plugins and applications
 toc: false
 type: doc
 ---
-The main philosophy of `go-home` is to be modular rather than all-in-one mega-pack combine. That's why instead of baking everything into main sources, sidekick applications and plugins are provided. 
+The main philosophy of `go-home` is to be modular rather than all-in-one
+mega-pack combine. That's why instead of baking everything into main sources,
+sidekick applications and plugins are provided.

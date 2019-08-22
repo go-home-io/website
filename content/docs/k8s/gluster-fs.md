@@ -10,19 +10,24 @@ type: doc
 logo: gluster.png
 ---
 
-[GlusterFS](https://www.gluster.org) is a distributed cluster-ready storage backend. We're going to use it together with [heketi](https://github.com/heketi/heketi) -- REST wrapper on top of Gluster. 
+[GlusterFS](https://www.gluster.org) is a distributed cluster-ready storage backend.
+We're going to use it together with [heketi](https://github.com/heketi/heketi) --
+REST wrapper on top of Gluster.
 
-> Please refer for official [documentation](https://github.com/gluster/gluster-kubernetes/tree/master/docs/examples/dynamic_provisioning_external_gluster) for more details. 
+> Please refer for official [documentation](https://github.com/gluster/gluster-kubernetes/tree/master/docs/examples/dynamic_provisioning_external_gluster)
+for more details.
 
 Install required packages:
 
-> If you're not planning to run Gluster on every node, skip `glusterfs-server` for them.
+> If you're not planning to run Gluster on every node,
+skip `glusterfs-server` for them.
 
 ```bash
 sudo apt-get install -y xfsprogs glusterfs-server glusterfs-client lvm2 thin-provisioning-tools
 ```
 
-> In this scenario 3 worker nodes are used as Gluster backend. You can use master as well, it doesn't matter. First worker then used as heketi server. 
+> In this scenario 3 worker nodes are used as Gluster backend.
+You can use master as well, it doesn't matter. First worker then used as heketi server.
 
 From first RPi do:
 
@@ -32,11 +37,15 @@ sudo gluster peer probe 192.168.0.102
 sudo gluster peer probe 192.168.0.103
 ```
 
-> At this point you can either choose to use separate storage for GlusterFS or create a loop [device](https://techdev.io/en/developer-blog/deploying-glusterfs-in-your-bare-metal-kubernetes-cluster).
+> At this point you can either choose to use separate storage for GlusterFS or
+create a loop [device](https://techdev.io/en/developer-blog/deploying-glusterfs-in-your-bare-metal-kubernetes-cluster).
 
-{{<warning "Instructions below are applicable to separate storage, for the loop device you'll have different paths. ">}} 
+<!-- markdownlint-disable line-length -->
+{{<warning "Instructions below are applicable to separate storage, for the loop device you'll have different paths. ">}}
+<!-- markdownlint-enable line-length -->
 
-Get your device name: 
+Get your device name:
+
 ```bash
 pi@k8s-agent-1:~ $ lsblk
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -47,42 +56,48 @@ sdb      8:16   1 28.9G  0 disk                         <- second attached USB
 `-sdb1   8:17   1 28.9G  0 part
 ```
 
-Format you cards on every machine: 
+Format you cards on every machine:
+
 ```bash
 sudo wipefs -a /dev/sdb1
 ```
 
-We need to remove existing `glusterfs-server` to `glusterd` since heketi is using a new name and debian pckg is not updated yet:
+We need to remove existing `glusterfs-server` to `glusterd` since heketi is
+using a new name and debian pckg is not updated yet:
+
 ```bash
 sudo /etc/init.d/glusterfs-server stop
 sudo mv /etc/init.d/glusterfs-server /etc/init.d/glusterd
 sudo /etc/init.d/glusterd start
 ```
 
-Create new `/etc/init.d/glusterfs-server`: 
+Create new `/etc/init.d/glusterfs-server`:
+
 ```bash
 #! /bin/sh
 
 /etc/init.d/glusterd $@
 ```
 
-Make it executable: 
+Make it executable:
+
 ```bash
 sudo chmod +x /etc/init.d/glusterfs-server
 ```
 
-Install heketi: 
+Install heketi:
 
 ```bash
 wget https://github.com/heketi/heketi/releases/download/v7.0.0/heketi-v7.0.0.linux.arm.tar.gz
 sudo mkdir -p /etc/heketi
 sudo tar xzvf heketi-v7.0.0.linux.arm.tar.gz -C /etc/heketi
 rm heketi-v7.0.0.linux.arm.tar.gz
-sudo ln /etc/heketi/heketi/heketi-cli /usr/bin/heketi-cli 
-sudo ln /etc/heketi/heketi/heketi /usr/bin/heketi 
+sudo ln /etc/heketi/heketi/heketi-cli /usr/bin/heketi-cli
+sudo ln /etc/heketi/heketi/heketi /usr/bin/heketi
 ```
 
 Generate keys:
+
 ```bash
 sudo ssh-keygen -f /etc/heketi/heketi_key -t rsa -N ''
 sudo ssh-copy-id -i /etc/heketi/heketi_key.pub pi@192.168.0.101
@@ -90,7 +105,8 @@ sudo ssh-copy-id -i /etc/heketi/heketi_key.pub pi@192.168.0.102
 sudo ssh-copy-id -i /etc/heketi/heketi_key.pub pi@192.168.0.103
 ```
 
-Create service definition: 
+Create service definition:
+
 ```bash
 [Unit]
 Description=Heketi Server
@@ -110,6 +126,7 @@ WantedBy=multi-user.target
 ```
 
 Start service:
+
 ```bash
 sudo chown -R pi:pi /etc/heketi/heketi_key* /var/lib/heketi
 sudo systemctl daemon-reload
@@ -117,6 +134,7 @@ sudo systemctl start heketi
 ```
 
 Patch access in `/etc/heketi/heketi/heketi.json`:
+
 ```json
 ...
     executor": "ssh",
@@ -128,74 +146,73 @@ Patch access in `/etc/heketi/heketi/heketi.json`:
       "fstab": "/etc/fstab",
       "backup_lvm_metadata": false
     },
-    
 ```
 
-
 Create your topology.json:
+
 ```json
 {
-	"clusters": [{
-		"nodes": [{
-				"node": {
-					"hostnames": {
-						"manage": [
-							"192.168.0.101"
-						],
-						"storage": [
-							"192.168.0.101"
-						]
-					},
-					"zone": 1
-				},
-				"devices": [
-					"/dev/sdb1"
-				]
-			},
-			{
-				"node": {
-					"hostnames": {
-						"manage": [
-							"192.168.0.102"
-						],
-						"storage": [
-							"192.168.0.102"
-						]
-					},
-					"zone": 1
-				},
-				"devices": [
-					"/dev/sdb1"
-				]
-			},
-			{
-				"node": {
-					"hostnames": {
-						"manage": [
-							"192.168.0.103"
-						],
-						"storage": [
-							"192.168.0.103"
-						]
-					},
-					"zone": 1
-				},
-				"devices": [
-					"/dev/sdb1"
-				]
-			}
-		]
-	}]
+    "clusters": [{
+        "nodes": [{
+                "node": {
+                    "hostnames": {
+                        "manage": [
+                            "192.168.0.101"
+                        ],
+                        "storage": [
+                            "192.168.0.101"
+                        ]
+                    },
+                    "zone": 1
+                },
+                "devices": [
+                    "/dev/sdb1"
+                ]
+            },
+            {
+                "node": {
+                    "hostnames": {
+                        "manage": [
+                            "192.168.0.102"
+                        ],
+                        "storage": [
+                            "192.168.0.102"
+                        ]
+                    },
+                    "zone": 1
+                },
+                "devices": [
+                    "/dev/sdb1"
+                ]
+            },
+            {
+                "node": {
+                    "hostnames": {
+                        "manage": [
+                            "192.168.0.103"
+                        ],
+                        "storage": [
+                            "192.168.0.103"
+                        ]
+                    },
+                    "zone": 1
+                },
+                "devices": [
+                    "/dev/sdb1"
+                ]
+            }
+        ]
+    }]
 }
 ```
 
-And start add to the heketi: 
+And start add to the heketi:
 
 ```bash
 heketi-cli topology load --json=topology.json
 ```
 
-Last thing is to create heketi StorageClass: 
+Last thing is to create heketi StorageClass:
 
 ```yaml
 apiVersion: storage.k8s.io/v1beta1
@@ -203,7 +220,7 @@ kind: StorageClass
 metadata:
   name: gluster
 provisioner: kubernetes.io/glusterfs
-parameters: 
+parameters:
   resturl: "http://192.168.0.101:8080"
 ```
 
@@ -213,4 +230,5 @@ kubectl create -f class.yaml && kubectl patch storageclass gluster -p '{"metadat
 
 Now cluster is ready to provision PVCs.
 
-> If you want to have access to the Heketi status without SSH-ing into the nodes, you can install [heketi-ui]({{<relref "/apps/heketi-ui">}}) app.
+> If you want to have access to the Heketi status without SSH-ing into the nodes,
+you can install [heketi-ui]({{<relref "/apps/heketi-ui">}}) app.
