@@ -1,6 +1,7 @@
 # [go-home.io](https://go-home.io) website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/29b86cca-d9fb-4a8c-91fc-5535766de8cf/deploy-status)](https://app.netlify.com/sites/go-home-io/deploys)
+[![Build Status](https://travis-ci.com/go-home-io/website.svg?branch=master)](https://travis-ci.com/go-home-io/website)
 
 ## Static generation
 
