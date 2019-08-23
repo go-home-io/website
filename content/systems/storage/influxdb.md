@@ -16,6 +16,10 @@ introducedIn: 0.1
 
 InfluxDB backend.
 
+Provider will try to create a new database upon startup.
+
+{{<warning "Provider won't change retention policy of the existing database.">}}
+
 ### Configuration options
 
 | Param | Required | Type | Default | Description |
@@ -24,4 +28,5 @@ InfluxDB backend.
 | **username** | yes | string || Username for InfluxDB connection |
 | **password** | yes | string || Password for InfluxDB connection |
 | **database** | yes | string || Database to use |
+| **retention** || string | `7d` | Retention policy duration for the database. You can check format [here](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations) |
 | **batchSize** || int | `10` | Number of records to store in-memory before performing a transaction |

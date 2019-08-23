@@ -60,6 +60,22 @@ Role is authorization part. Authentication is a users storage.
 #### Rule systems
 
 * `device` -- defines devices access
+* `core` -- defines access to a helper systems. See below
+
+#### `Core` system
+
+This system is used to grant access to the helper APIs available in a `go-home`.
+Those APIs are designed for a system administrators and don't support
+fine grained rules.
+
+The following verbs could be used:
+
+* `*` -- all APIs are available
+* `worker` -- user will see all operating workers
+* `status` -- user will see all loaded devices and their load status. Please note,
+even if user doesn't have access to some device, he still will see its status
+through this API
+* `logs` -- user will see system's logs, if a configured logger supports this
 
 ### Example
 

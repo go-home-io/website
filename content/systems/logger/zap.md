@@ -20,16 +20,24 @@ introducedIn: 0.1
 
 | Param | Required | Type | Default | Description |
 |-------|----------|------|---------|-------------|
-| **targets** | yes | [target] || List of all targets |
-
-#### Target
-
-| Param | Required | Type | Default | Description |
-|-------|----------|------|---------|-------------|
-| **regular** | yes | [string]|| List of targets for regular messages |
-| **error** | yes | [string]|| List of targets for error messages |
+| **target** | yes | string | `console` | Log target |
 
 #### Supported targets
 
-* `stdout`
-* `stderr`
+* `console` -- outputs everything to the standard console. History is unavailable.
+* `influxDB` -- outputs everything to the influxDB. History is available
+
+#### influxDB target configuration
+
+Logger will try to create a new database upon startup.
+
+{{<warning "Logger won't change retention policy of the existing database.">}}
+
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **address** | yes | string || InfluxDB server address |
+| **username** | yes | string || Username for InfluxDB connection |
+| **password** | yes | string || Password for InfluxDB connection |
+| **database** | yes | string || Database to use |
+| **retention** || string | `7d` | Retention policy duration for the database. You can check format [here](https://docs.influxdata.com/influxdb/v1.7/query_language/spec/#durations) |
+| **batchSize** || int | `10` | Number of records to store in-memory before performing a transaction |
