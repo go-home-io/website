@@ -34,7 +34,7 @@ supports all major MQTT versions.
 |-------|----------|------|---------|-------------|
 | **type** | yes | string || Device type |
 | **sensorType** ||string || If device is a sensor, you can specify its type |
-| **name** | yes | string || Device name |
+| **name** | yes | string || Device name. You still can override this through `nameOverrides`, however it doesn't make a lot of sense to do so |
 | **qos** || int | `2` | [Quality of service](https://www.eclipse.org/paho/files/mqttdoc/MQTTClient/html/qos.html) |
 | **retained** || bool | `false` | Flag indicating whether commands messages for this device should be posted as retained |
 | **pessimistic** || bool | `false` | Flag indicating whether device should use pessimistic mode. In this mode, after using any command, device is not waiting for the update message from the broker and sets it's internal state automatically to whatever was received from a command |

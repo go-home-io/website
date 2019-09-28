@@ -16,7 +16,7 @@ updateType: internalPull
 Plugin provides control of Philips HUE Hubs.
 
 This provider supports secret storage and will automatically persist token in
-format `<config name>-hub-<ip address>`. E.g. `hue-hub-192.168.0.29: token`.
+format `hue-hub-<ip address>`. E.g. `hue-hub-192.168.0.29: token`.
 If your hub is not configured to use static IP,
 make sure you've added `token` into config.
 
