@@ -60,7 +60,7 @@ Role is authorization part. Authentication is a users storage.
 #### Rule systems
 
 * `device` -- defines devices access
-* `trigger` -- defines triggers access. `command` rule is obsolete for this system
+* `trigger` -- defines triggers access. `command` verb is obsolete for this system
 * `core` -- defines access to a helper systems. See below
 
 #### `Core` system
