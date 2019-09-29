@@ -34,9 +34,47 @@ Actions will be executed one by one.
 |-------|----------|------|---------|-------------|
 | **system** | yes | string || Describes which system this action belongs to |
 | **entity** | yes | string || [Glob]({{<relref "/docs/config/glob.md">}})-based entity ID which should be called |
-| **command** | yes | string || Command which should be called |
-| **args** |||| List of arguments to pass to `command` |
 
 #### Action systems
 
 * `device` -- invokes device command.
+* `notification` -- sends a notification.
+
+#### Device command action
+
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **command** | yes | string || Command which should be called |
+| **args** |||| List of arguments to pass to `command` |
+
+Example:
+
+```yaml
+system: trigger
+provider: cron
+name: cron-tr
+schedule: "*/1 * * * *"
+actions:
+  - system: device
+    entity: hue.light.c_lr_lamp
+    command: "on"
+```
+
+#### Notification system action
+
+| Param | Required | Type | Default | Description |
+|-------|----------|------|---------|-------------|
+| **message** || string || Message to send. If message is not specified, trigger will send its name instead |
+
+Example:
+
+```yaml
+system: trigger
+provider: cron
+name: cron-tr
+schedule: "*/1 * * * *"
+actions:
+  - system: notification
+    entity: my_place.*
+    message: Minute has passed
+```
